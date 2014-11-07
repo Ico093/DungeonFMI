@@ -11,14 +11,14 @@ public class projectileControllerScr : MonoBehaviour {
 	Vector2 projectileDirection = new Vector2(1, 1);
 
 	// Use this for initialization
-	void Start (Vector3 position) {
-		projectileStartPosition = position;
-	}
+	//void Start (Vector3 position) {
+	//	projectileStartPosition = position;
+	//}
 	
 	// Update is called once per frame
 	void Update () {
 		//transform.position += projectileDirection * projectileSpeed * Time.deltaTime;
-//		if(transform.position - 
+		//		if(transform.position - 
 		//projectile position update
 		//if projectile is further than camera sees  - Destroy
 	}

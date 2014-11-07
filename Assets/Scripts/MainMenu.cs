@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MainMenu : MonoBehaviour
+public class mainMenu : MonoBehaviour
 {
 
 		// Use this for initialization
@@ -26,17 +26,21 @@ public class MainMenu : MonoBehaviour
 				GUI.Box (new Rect (0, 0, 200, 200), "Dungeon FMI");
 
 				if (GUI.Button (new Rect (60, 40, 80, 30), "Play")) {
-						if (Event.current.button == 0)
-								Debug.Log ("MyButton was clicked with left mouse button.");
-						else if (Event.current.button == 1)
-								Debug.Log ("MyButton was clicked with right mouse button.");
+						if (Event.current.button == 0) {
+						}
 				}
 
 				if (GUI.Button (new Rect (60, 80, 80, 30), "How to play")) {
+						if (Event.current.button == 0) {
+
+						}
 				}
-				var exit = GUI.Button (new Rect (60, 120, 80, 30), "Exit");
 
-
+				if (GUI.Button (new Rect (60, 120, 80, 30), "Exit")) {
+						if (Event.current.button == 0) {
+				
+						}
+				}
 
 				// End the group we started above. This is very important to remember!
 				GUI.EndGroup ();
