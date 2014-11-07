@@ -12,8 +12,8 @@ public class playerControllerScr : MonoBehaviour {
 
 	void Update () 
 	{
-		float moveHorizontal = Input.GetAxis ("Horizontal") * movementSpeed * Time.deltaTime;
-		float moveVertical = Input.GetAxis ("Vertical") * movementSpeed * Time.deltaTime;
-		transform.Translate (new Vector3(moveHorizontal, moveVertical, 0));
+		float moveHorizontal = Input.GetAxis ("Horizontal") ;
+		float moveVertical = Input.GetAxis ("Vertical") ;
+		transform.Translate (new Vector3(moveHorizontal, moveVertical, 0).normalized * movementSpeed * Time.deltaTime);
 	}
 }
