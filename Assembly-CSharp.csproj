@@ -46,9 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\EnemyObjects.cs" />
+     <Compile Include="Assets\Scripts\EnemyObjects.cs" />
+     <Compile Include="Assets\Scripts\createEnemy.cs" />
+     <Compile Include="Assets\Scripts\enemyController.cs" />
      <Compile Include="Assets\Scripts\playerControllerScr.cs" />
-     <Compile Include="Assets\createEnemy.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
