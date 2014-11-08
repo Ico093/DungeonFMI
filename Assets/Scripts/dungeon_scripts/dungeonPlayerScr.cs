@@ -12,7 +12,6 @@ public class dungeonPlayerScr : MonoBehaviour {
 	public int hp;
 	public int maxHP;
 	public float dieTimeInHole;
-	bool canMove=true;
 	int dmg;
 	public static long score;
 
@@ -23,6 +22,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 	SpriteRenderer sr;
 	public Sprite[] states;
 	public Sprite dead_sprite;
+
 
 	public void SetMode(int m)
 	{
@@ -61,6 +61,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 	public void addScore(long _score) {
 		score+=_score;
 	}
+
 	void Start () 
 	{
 		SetDamage (5);
@@ -71,10 +72,10 @@ public class dungeonPlayerScr : MonoBehaviour {
 	
 	void Update () 
 	{
-		if (canMove) {
 						PlayerMovement ();
 						ShootLogic ();
-				}
+
+				
 	}
 	
 	void PlayerMovement()
@@ -207,40 +208,25 @@ public class dungeonPlayerScr : MonoBehaviour {
 	{
 		hp -= damage;
 		if (hp <= 0) {
-<<<<<<< .merge_file_a03592
 			Debug.Log ("YOU DEAD MOTHERFUCKER!!!! score:"+score);
-=======
+
 			Application.LoadLevel ("EndGame");
->>>>>>> .merge_file_a02764
+
 				}
 	}
-	void OnTriggerStay2D(Collider2D other)
-	{
-				if (other.tag == "hole") {
-						dieTimeInHole -= Time.deltaTime;
-						if (dieTimeInHole <= 0)
-								Application.LoadLevel ("EndGame");
-			
-				}
-		}
+
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.tag == "hole") {
-			sr.sprite=dead_sprite;
-			//this.rigidbody2D.isKinematic=true;
-			this.collider2D.isTrigger=true;
-			canMove=false;
-			
-		}
+
 		if (other.tag == "powerUp") {
-
+			
 			var another = other.GetComponent<dropScr> ();
-
-
+			
+			
 			string type=another.getType();
 			int value=another.GetValue();
 			int _score=another.GetScore();
-
+			
 			addScore(_score);
 			Destroy(another.gameObject);
 			Debug.Log(type);
@@ -254,9 +240,20 @@ public class dungeonPlayerScr : MonoBehaviour {
 			default:break;
 				
 			}
-
+			
 			
 		}
 		
 	}
+	void OnCollisionEnter2D(Collision2D other)
+	{
+				if (other.gameObject.tag == "hole") {
+					sr.sprite = dead_sprite;
+					Application.LoadLevel ("EndGame");
+				
+						
+
+		
+				}
+		}
 }
