@@ -48,10 +48,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BrickScript.cs" />
      <Compile Include="Assets\Scripts\ConstructBG.cs" />
-     <Compile Include="Assets\Scripts\LabyrinthMove.cs" />
-     <Compile Include="Assets\Scripts\ball_move.cs" />
      <Compile Include="Assets\Scripts\FMITrigger.cs" />
      <Compile Include="Assets\Scripts\LabyrinthMove.cs" />
+     <Compile Include="Assets\Scripts\ball_move.cs" />
      <Compile Include="Assets\Scripts\cameraScr.cs" />
      <Compile Include="Assets\Scripts\createEnemy.cs" />
      <Compile Include="Assets\Scripts\createLabyrinth.cs" />
