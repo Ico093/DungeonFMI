@@ -9,6 +9,8 @@ public class fireZombie : MonoBehaviour {
 	public GameObject projectile;
 	public GameObject player;
 
+	public GameObject corpse;
+
 	public int hp;
 	public int dmg;
 	float attackSpeed;
@@ -58,7 +60,7 @@ public class fireZombie : MonoBehaviour {
 		//animator.speed = 0.5f;
 		player = GameObject.Find ("player");
 		SetDamage (10);
-		SetAS (2.0f);
+		SetAS (0.5f);
 		attackSpeedCD = attackSpeed;
 	}
 	
@@ -67,57 +69,28 @@ public class fireZombie : MonoBehaviour {
 		attackSpeed -= Time.deltaTime;
 		if (attackSpeed <= 0)
 			{
-				Shoot (Random.Range (-30,30));
-				attackSpeed=attackSpeedCD;
+			int shoot_times=Random.Range (1,3);
+			for(int i=0;i<shoot_times;i++)
+				Shoot (Random.Range(-10,10),Random.Range(1,4));
+			attackSpeed=attackSpeedCD;
 			}
 		Vector3 player_position = player.transform.position;
 		Vector3 tempVector = new Vector3 (transform.position.x, transform.position.y, 0f);
 		tempVector -= ((tempVector - player_position).normalized * chaseSpeed * Time.deltaTime);
 		transform.position = tempVector;
-		double moveHorizontal = (player_position - transform.position).normalized.x;
-		double moveVertical = (player_position - transform.position).normalized.y;
-		if (moveHorizontal == 0 && moveVertical > 0) {	// up
-			//sr.sprite = states[3];
-			direction.x = 0;
-			direction.y = 1;
-		} else if (moveHorizontal == 0 && moveVertical < 0) {	//down
-			direction.x = 0;
-			direction.y = -1;
-			//animator.SetInteger("Direction", 2);
-		} else if (moveHorizontal > 0 && moveVertical == 0) {	//right
-			direction.x = 1;
-			direction.y = 0;
-			//animator.SetInteger("Direction", 3);
-		} else if (moveHorizontal < 0 && moveVertical == 0) {	//left
-			direction.x = -1;
-			direction.y = 0;
+		float moveHorizontal = (player_position - transform.position).normalized.x;
+		float moveVertical = (player_position - transform.position).normalized.y;
 
-			//animator.SetInteger("Direction", 1);
-		} else if (moveHorizontal > 0 && moveVertical > 0) {	//up right
-			direction.x = 1;
-			direction.y = 1;
-			//animator.SetInteger("Direction", 3);
-		} else if (moveHorizontal < 0 && moveVertical > 0) {	//up left
-			direction.x = -1;
-			direction.y = 1;
-			//animator.SetInteger("Direction", 1);
-		} else if (moveHorizontal > 0 && moveVertical < 0) {	//down right
-			direction.x = 1;
-			direction.y = -1;
-			//animator.SetInteger("Direction", 3);
-		} else if (moveHorizontal < 0 && moveVertical < 0) {	//down left
-			direction.x = -1;
-			direction.y = -1;
-			//animator.SetInteger("Direction", 2);
-		} else {
-		}
+		direction.x = moveHorizontal;
+		direction.y = moveVertical;
 	}
 
-	void Shoot(float angle)
+	void Shoot(float angle,float speed)
 	{
 		Vector2 tempDirection = direction;
 		if (angle != 0.0f)
 		{
+
 			float rad = (angle * Mathf.PI) / 180;
 			Matrix4x4 rotMatrix = new Matrix4x4();
 			rotMatrix.SetRow(0, new Vector4(Mathf.Cos (rad), -Mathf.Sin (rad), 0 ,0));
@@ -131,12 +104,16 @@ public class fireZombie : MonoBehaviour {
 		var projectileHelper = tempProjectile.GetComponent<EnemyProjectile> ();
 		projectileHelper.SetTargetPosition (tempDirection.normalized);
 		projectileHelper.SetDamage (dmg);
+		projectileHelper.setSpeed (speed);
 	}
 
 	public void TakeHit(int damage)
 	{
 		hp -= damage;
 		if (hp <= 0) {
+			var tempCorpse = Instantiate(corpse, transform.position, Quaternion.identity) as GameObject;
+			var CheckForCoin = tempCorpse.GetComponent<onDead> ();
+			CheckForCoin.setCoin();
 			Destroy (this.gameObject);
 		}
 	}

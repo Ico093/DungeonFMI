@@ -22,7 +22,10 @@ public class EnemyProjectile : MonoBehaviour {
 	{
 		transform.position += (Vector3)projectileDirection * projectileSpeed * Time.deltaTime;		
 	}
-	
+	public void setSpeed(float speed) {
+		projectileSpeed *= speed/2f;
+
+	}
 	public void SetTargetPosition(Vector2 target)
 	{
 		Matrix4x4 matrix = new Matrix4x4 ();
@@ -51,14 +54,6 @@ public class EnemyProjectile : MonoBehaviour {
 		Destroy (this.gameObject);
 	}
 	
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		
-		Destroy (this.gameObject);
-		if (other.tag == "Player") {
-			var another = other.GetComponent<dungeonPlayerScr>();
-			another.TakeHit(this.GetDamage());
-		}
-		
-	}
+
+
 }
