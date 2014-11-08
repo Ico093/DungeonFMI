@@ -4,12 +4,9 @@ using System.Collections;
 public class playerControllerScr : MonoBehaviour {
 
 	public float movementSpeed;
-	public Object projectile;
-	public float projectileTimer;
 
 	float moveHorizontal;
 	float moveVertical;
-	projectileControllerScr projectileHelper;
 
 	SpriteRenderer sr;
 	public Sprite top;
@@ -29,7 +26,6 @@ public class playerControllerScr : MonoBehaviour {
 	void Update () 
 	{
 		PlayerMovement ();
-		Shoot ();
 	}
 
 	void PlayerMovement()
@@ -76,16 +72,6 @@ public class playerControllerScr : MonoBehaviour {
 		}
 	}
 
-	void Shoot()
-	{
-		projectileTimer -= Time.deltaTime;
-		if (projectileTimer <= 0 || Input.GetKeyDown(KeyCode.Space)) {
-			projectile = Instantiate(projectile, transform.position, Quaternion.identity);
-			projectileHelper = GetComponent<projectileControllerScr>();
-			projectileHelper.SetTargetPosition(new Vector2(1, 0));
-			projectileTimer = 2;
-		}
-	}
 
 	void SetDirection()
 	{
