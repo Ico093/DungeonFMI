@@ -207,10 +207,15 @@ public class dungeonPlayerScr : MonoBehaviour {
 		hp -= damage;
 		if (hp <= 0) {
 			Debug.Log ("YOU DEAD MOTHERFUCKER!!!! score:"+score);
+<<<<<<< HEAD
 
 			Application.LoadLevel ("EndGame");
 
+				}
+=======
+			Application.LoadLevel ("EndGame");
 		}
+>>>>>>> 149d73e9be9c7c010745f71b78870703cceb7e2a
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
