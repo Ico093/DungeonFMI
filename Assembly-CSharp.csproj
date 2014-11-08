@@ -68,6 +68,7 @@
      <Compile Include="Assets\Scripts\menu_scripts\endGame.cs" />
      <Compile Include="Assets\Scripts\menu_scripts\mainMenu.cs" />
      <Compile Include="Assets\Scripts\npc_scritps\npc1.cs" />
+     <Compile Include="Assets\Scripts\npc_scritps\npc2.cs" />
      <Compile Include="Assets\Scripts\padMove.cs" />
      <Compile Include="Assets\Scripts\playerControllerScr.cs" />
   </ItemGroup>
