@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\enemyObjects.cs" />
      <Compile Include="Assets\Scripts\hpBarScr.cs" />
      <Compile Include="Assets\Scripts\mainMenu.cs" />
+     <Compile Include="Assets\Scripts\npc_scritps\npc1.cs" />
      <Compile Include="Assets\Scripts\playerControllerScr.cs" />
      <Compile Include="Assets\Scripts\projectileControllerScr.cs" />
      <Compile Include="Assets\fireZombie.cs" />
