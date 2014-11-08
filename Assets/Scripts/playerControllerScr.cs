@@ -23,7 +23,7 @@ public class playerControllerScr : MonoBehaviour {
 		sr = GetComponent<SpriteRenderer>();
 	}
 
-	void Update () 
+	void FixedUpdate () 
 	{
 		PlayerMovement ();
 	}
@@ -72,9 +72,8 @@ public class playerControllerScr : MonoBehaviour {
 		}
 	}
 
-
-	void SetDirection()
+	void OnTriggerEnter(Collider other)
 	{
-
+		Application.LoadLevel ("Dungeon");
 	}
 }
