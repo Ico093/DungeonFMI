@@ -21,11 +21,14 @@ public class playerControllerScr : MonoBehaviour {
 	void Start () 
 	{
 		sr = GetComponent<SpriteRenderer>();
+		sr.sortingOrder = (int)(-transform.position.y * 1000);
 	}
 
 	void FixedUpdate () 
 	{
 		PlayerMovement ();
+		sr.sortingOrder = (int)(-transform.position.y * 1000);
+		Debug.Log (sr.sortingOrder);
 	}
 
 	void PlayerMovement()
