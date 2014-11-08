@@ -12,7 +12,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 	public int hp;
 	public int maxHP;
 	int dmg;
-	long score;
+	public static long score;
 	
 	float moveHorizontal;
 	float moveVertical;
@@ -50,9 +50,6 @@ public class dungeonPlayerScr : MonoBehaviour {
 	{
 		return maxHP;
 	}
-	public long getScore() {
-				return score;
-		}
 	public void addScore(long _score) {
 		score+=_score;
 	}
@@ -199,7 +196,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 	{
 		hp -= damage;
 		if (hp <= 0) {
-			Debug.Log ("YOU DEAD MOTHERFUCKER!!!! score:"+score);
+			Application.LoadLevel ("EndGame");
 				}
 	}
 
