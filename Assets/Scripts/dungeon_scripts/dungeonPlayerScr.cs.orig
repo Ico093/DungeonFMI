@@ -14,8 +14,16 @@ public class dungeonPlayerScr : MonoBehaviour {
 	public float dieTimeInHole;
 	bool canMove=true;
 	int dmg;
+<<<<<<< .merge_file_a03592
+	long score;
+=======
 	public static long score;
+<<<<<<< HEAD
 
+=======
+>>>>>>> .merge_file_a02764
+	
+>>>>>>> a7453d490f06f553fbcfbb0497cbd228b6ce7db5
 	float moveHorizontal;
 	float moveVertical;
 	Vector2 direction = new Vector2(0, 1);
@@ -53,11 +61,12 @@ public class dungeonPlayerScr : MonoBehaviour {
 	{
 		return maxHP;
 	}
-
+<<<<<<< .merge_file_a03592
 	public long getScore() {
 				return score;
 		}
-
+=======
+>>>>>>> .merge_file_a02764
 	public void addScore(long _score) {
 		score+=_score;
 	}
