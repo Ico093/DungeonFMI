@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class dungeonPlayerScr : MonoBehaviour {
@@ -12,18 +12,9 @@ public class dungeonPlayerScr : MonoBehaviour {
 	public int hp;
 	public int maxHP;
 	public float dieTimeInHole;
-	bool canMove=true;
 	int dmg;
-<<<<<<< .merge_file_a03592
-	long score;
-=======
 	public static long score;
-<<<<<<< HEAD
-
-=======
->>>>>>> .merge_file_a02764
 	
->>>>>>> a7453d490f06f553fbcfbb0497cbd228b6ce7db5
 	float moveHorizontal;
 	float moveVertical;
 	Vector2 direction = new Vector2(0, 1);
@@ -31,6 +22,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 	SpriteRenderer sr;
 	public Sprite[] states;
 	public Sprite dead_sprite;
+
 
 	public void SetMode(int m)
 	{
@@ -61,15 +53,13 @@ public class dungeonPlayerScr : MonoBehaviour {
 	{
 		return maxHP;
 	}
-<<<<<<< .merge_file_a03592
 	public long getScore() {
 				return score;
-		}
-=======
->>>>>>> .merge_file_a02764
+	}
 	public void addScore(long _score) {
 		score+=_score;
 	}
+
 	void Start () 
 	{
 		SetDamage (5);
@@ -80,10 +70,10 @@ public class dungeonPlayerScr : MonoBehaviour {
 	
 	void Update () 
 	{
-		if (canMove) {
 						PlayerMovement ();
 						ShootLogic ();
-				}
+
+				
 	}
 	
 	void PlayerMovement()
@@ -216,40 +206,30 @@ public class dungeonPlayerScr : MonoBehaviour {
 	{
 		hp -= damage;
 		if (hp <= 0) {
-<<<<<<< .merge_file_a03592
 			Debug.Log ("YOU DEAD MOTHERFUCKER!!!! score:"+score);
+<<<<<<< HEAD
+
+			Application.LoadLevel ("EndGame");
+
+				}
 =======
 			Application.LoadLevel ("EndGame");
->>>>>>> .merge_file_a02764
-				}
-	}
-	void OnTriggerStay2D(Collider2D other)
-	{
-				if (other.tag == "hole") {
-						dieTimeInHole -= Time.deltaTime;
-						if (dieTimeInHole <= 0)
-								Application.LoadLevel ("EndGame");
-			
-				}
 		}
+>>>>>>> 149d73e9be9c7c010745f71b78870703cceb7e2a
+	}
+
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.tag == "hole") {
-			sr.sprite=dead_sprite;
-			//this.rigidbody2D.isKinematic=true;
-			this.collider2D.isTrigger=true;
-			canMove=false;
-			
-		}
+
 		if (other.tag == "powerUp") {
-
+			
 			var another = other.GetComponent<dropScr> ();
-
-
+			
+			
 			string type=another.getType();
 			int value=another.GetValue();
 			int _score=another.GetScore();
-
+			
 			addScore(_score);
 			Destroy(another.gameObject);
 			Debug.Log(type);
@@ -263,9 +243,20 @@ public class dungeonPlayerScr : MonoBehaviour {
 			default:break;
 				
 			}
-
+			
 			
 		}
 		
 	}
+	void OnCollisionEnter2D(Collision2D other)
+	{
+				if (other.gameObject.tag == "hole") {
+					sr.sprite = dead_sprite;
+					Application.LoadLevel ("EndGame");
+				
+						
+
+		
+				}
+		}
 }

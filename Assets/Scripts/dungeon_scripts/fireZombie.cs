@@ -15,6 +15,7 @@ public class fireZombie : MonoBehaviour {
 	public int dmg;
 	float attackSpeed;
 	float attackSpeedCD;
+	float rotAngle = -90.0f;
 
 	Vector2 direction = new Vector2(0, 1);
 
@@ -83,20 +84,28 @@ public class fireZombie : MonoBehaviour {
 		float moveVertical = (player_position - transform.position).normalized.y;
 		if (moveHorizontal == 0 && moveVertical > 0) {	// up
 			animator.SetInteger("Direction", 0);
+			rotAngle = 0.0f;
 		} else if (moveHorizontal == 0 && moveVertical < 0) {	//down
 			animator.SetInteger("Direction", 2);
+			rotAngle = -180.0f;
 		} else if (moveHorizontal > 0 && moveVertical == 0) {	//right
 			animator.SetInteger("Direction", 3);
+			rotAngle = -90.0f;
 		} else if (moveHorizontal < 0 && moveVertical == 0) {	//left
 			animator.SetInteger("Direction", 1);
+			rotAngle = 90.0f;
 		} else if (moveHorizontal > 0 && moveVertical > 0) {	//up right
 			animator.SetInteger("Direction", 0);
+			rotAngle = -45.0f;
 		} else if (moveHorizontal < 0 && moveVertical > 0) {	//up left
 			animator.SetInteger("Direction", 1);
+			rotAngle = 45.0f;
 		} else if (moveHorizontal > 0 && moveVertical < 0) {	//down right
 			animator.SetInteger("Direction", 3);
+			rotAngle = -135.0f;
 		} else if (moveHorizontal < 0 && moveVertical < 0) {	//down left
 			animator.SetInteger("Direction", 2);
+			rotAngle = 135.0f;
 		}
 
 
@@ -122,6 +131,7 @@ public class fireZombie : MonoBehaviour {
 		var tempProjectile = Instantiate (projectile, transform.position, Quaternion.identity) as GameObject;
 		var projectileHelper = tempProjectile.GetComponent<EnemyProjectile> ();
 		projectileHelper.SetTargetPosition (tempDirection.normalized);
+		projectileHelper.Rotate (rotAngle);
 		projectileHelper.SetDamage (dmg);
 		projectileHelper.setSpeed (speed);
 	}

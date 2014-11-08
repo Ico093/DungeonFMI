@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class dungeonPlayerScr : MonoBehaviour {
@@ -14,7 +14,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 	public float dieTimeInHole;
 	int dmg;
 	public static long score;
-
+	
 	float moveHorizontal;
 	float moveVertical;
 	Vector2 direction = new Vector2(0, 1);
@@ -53,11 +53,9 @@ public class dungeonPlayerScr : MonoBehaviour {
 	{
 		return maxHP;
 	}
-
 	public long getScore() {
 				return score;
-		}
-
+	}
 	public void addScore(long _score) {
 		score+=_score;
 	}
@@ -212,7 +210,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 
 			Application.LoadLevel ("EndGame");
 
-				}
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
