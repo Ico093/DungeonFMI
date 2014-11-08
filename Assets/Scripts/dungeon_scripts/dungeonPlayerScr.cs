@@ -11,6 +11,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 	public int hp;
 	public int maxHP;
 	int dmg;
+	long score;
 	
 	float moveHorizontal;
 	float moveVertical;
@@ -48,12 +49,18 @@ public class dungeonPlayerScr : MonoBehaviour {
 	{
 		return maxHP;
 	}
-	
+	public long getScore() {
+				return score;
+		}
+	public void addScore(long _score) {
+		score+=_score;
+	}
 	void Start () 
 	{
 		SetDamage (5);
 		sr = GetComponent<SpriteRenderer>();
 		states = Resources.LoadAll<Sprite>("brain");
+		score = 0;
 	}
 	
 	void Update () 
@@ -69,7 +76,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 		transform.Translate (new Vector3(moveHorizontal, moveVertical, 0).normalized * movementSpeed * Time.deltaTime);
 		SetDirection ();
 	}
-	
+
 	void ShootLogic()
 	{
 		projectileTimer -= Time.deltaTime;
@@ -182,7 +189,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 	{
 		hp -= damage;
 		if (hp <= 0) {
-			Debug.Log ("YOU DEAD MOTHERFUCKER!!!!");
+			Debug.Log ("YOU DEAD MOTHERFUCKER!!!! score:"+score);
 				}
 	}
 
@@ -195,6 +202,9 @@ public class dungeonPlayerScr : MonoBehaviour {
 
 			string type=another.getType();
 			int value=another.GetValue();
+			int _score=another.GetScore();
+
+			addScore(_score);
 			Destroy(another.gameObject);
 			Debug.Log(type);
 			switch(type) {
