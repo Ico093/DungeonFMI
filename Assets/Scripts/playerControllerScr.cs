@@ -65,9 +65,8 @@ public class playerControllerScr : MonoBehaviour {
 		}
 	}
 
-
-	void SetDirection()
+	void OnTriggerEnter(Collider other)
 	{
-
+		Application.LoadLevel ("Dungeon");
 	}
 }
