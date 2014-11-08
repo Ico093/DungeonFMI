@@ -46,9 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\FMITrigger.cs" />
      <Compile Include="Assets\Scripts\cameraScr.cs" />
      <Compile Include="Assets\Scripts\createEnemy.cs" />
+     <Compile Include="Assets\Scripts\createLabyrinth.cs" />
      <Compile Include="Assets\Scripts\dungeonPlayerScr.cs" />
      <Compile Include="Assets\Scripts\enemyController.cs" />
      <Compile Include="Assets\Scripts\enemyObjects.cs" />
