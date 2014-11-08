@@ -70,7 +70,7 @@ public class enemyController : MonoBehaviour {
 		double moveHorizontal = (player_position - transform.position).normalized.x;
 		double moveVertical = (player_position - transform.position).normalized.y;
 		if (moveHorizontal == 0 && moveVertical > 0) {	// up
-			//sr.sprite = states[3];
+			animator.SetInteger("Direction", 0);
 		} else if (moveHorizontal == 0 && moveVertical < 0) {	//down
 			animator.SetInteger("Direction", 2);
 		} else if (moveHorizontal > 0 && moveVertical == 0) {	//right
@@ -78,7 +78,7 @@ public class enemyController : MonoBehaviour {
 		} else if (moveHorizontal < 0 && moveVertical == 0) {	//left
 			animator.SetInteger("Direction", 1);
 		} else if (moveHorizontal > 0 && moveVertical > 0) {	//up right
-			animator.SetInteger("Direction", 3);
+			animator.SetInteger("Direction", 0);
 		} else if (moveHorizontal < 0 && moveVertical > 0) {	//up left
 			animator.SetInteger("Direction", 1);
 		} else if (moveHorizontal > 0 && moveVertical < 0) {	//down right

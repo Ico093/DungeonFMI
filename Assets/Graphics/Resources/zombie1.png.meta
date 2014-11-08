@@ -9,6 +9,8 @@ TextureImporter:
     21300008: zombie1_5
     21300010: zombie1_6
     21300012: zombie1_3
+    21300014: zombie1_7
+    21300016: zombie1_8
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -53,70 +55,90 @@ TextureImporter:
     - name: zombie1_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 27
-        width: 182
-        height: 223
+        x: 380
+        y: 198
+        width: 314
+        height: 399
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: zombie1_1
       rect:
         serializedVersion: 2
-        x: 213
-        y: 25
-        width: 179
-        height: 228
+        x: 770
+        y: 217
+        width: 314
+        height: 382
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: zombie1_2
       rect:
         serializedVersion: 2
-        x: 455
-        y: 27
-        width: 180
-        height: 224
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: zombie1_4
-      rect:
-        serializedVersion: 2
-        x: 843
-        y: 9
-        width: 158
-        height: 248
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: zombie1_5
-      rect:
-        serializedVersion: 2
-        x: 1001
-        y: 12
-        width: 154
-        height: 249
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: zombie1_6
-      rect:
-        serializedVersion: 2
-        x: 1204
-        y: 65
-        width: 188
-        height: 181
+        x: 1131
+        y: 194
+        width: 314
+        height: 396
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: zombie1_3
       rect:
         serializedVersion: 2
-        x: 637
-        y: 26
-        width: 179
-        height: 224
+        x: 1480
+        y: 189
+        width: 274
+        height: 433
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zombie1_4
+      rect:
+        serializedVersion: 2
+        x: 1803
+        y: 186
+        width: 267
+        height: 433
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zombie1_5
+      rect:
+        serializedVersion: 2
+        x: 2134
+        y: 174
+        width: 241
+        height: 448
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zombie1_6
+      rect:
+        serializedVersion: 2
+        x: 2428
+        y: 174
+        width: 237
+        height: 447
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zombie1_7
+      rect:
+        serializedVersion: 2
+        x: 2683
+        y: 262
+        width: 321
+        height: 305
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zombie1_8
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 218
+        width: 314
+        height: 387
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

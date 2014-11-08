@@ -12,7 +12,7 @@ public class onDead : MonoBehaviour {
 	}
 	public void setCoin() {
 
-		if (Random.Range (1, 100) > 50) {
+		if (Random.Range (1, 100) > 95) {
 			var tempCoin = Instantiate(coin, this.transform.position, Quaternion.identity) as GameObject;
 			var tempCoinHelper = tempCoin.GetComponent<dropScr>();
 			int rand=Random.Range(1,4);
