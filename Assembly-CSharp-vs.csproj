@@ -60,11 +60,11 @@
      <Compile Include="Assets\Scripts\dungeon_scripts\dungeonPlayerScr.cs" />
      <Compile Include="Assets\Scripts\dungeon_scripts\enemyController.cs" />
      <Compile Include="Assets\Scripts\dungeon_scripts\fireZombie.cs" />
-     <Compile Include="Assets\Scripts\dungeon_scripts\fmiScr.cs" />
      <Compile Include="Assets\Scripts\dungeon_scripts\hpBarScr.cs" />
      <Compile Include="Assets\Scripts\dungeon_scripts\onDead.cs" />
      <Compile Include="Assets\Scripts\dungeon_scripts\projectileControllerScr.cs" />
      <Compile Include="Assets\Scripts\enemyObjects.cs" />
+     <Compile Include="Assets\Scripts\fmiScr.cs" />
      <Compile Include="Assets\Scripts\menu_scripts\endGame.cs" />
      <Compile Include="Assets\Scripts\menu_scripts\mainMenu.cs" />
      <Compile Include="Assets\Scripts\npc_scritps\npc1.cs" />
