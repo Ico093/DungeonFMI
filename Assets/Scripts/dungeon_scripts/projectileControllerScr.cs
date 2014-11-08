@@ -36,6 +36,11 @@ public class projectileControllerScr : MonoBehaviour {
 		projectileDirection.Normalize ();
 	}
 
+	public void Rotate(float angle)
+	{
+		transform.Rotate (new Vector3 (0, 0, angle));
+		}
+
 	public void SetDamage(int damage)
 	{
 		dmg = damage;
