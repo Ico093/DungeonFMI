@@ -1,0 +1,146 @@
+fileFormatVersion: 2
+guid: 87104cc9c293186459ec77213d953582
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: zombie2_0
+    21300002: zombie2_1
+    21300004: zombie2_2
+    21300006: zombie2_3
+    21300008: zombie2_4
+    21300010: zombie2_5
+    21300012: zombie2_6
+    21300014: zombie2_7
+    21300016: zombie2_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: zombie2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 221
+        width: 353
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zombie2_1
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 119
+        width: 235
+        height: 565
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zombie2_2
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 127
+        width: 249
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zombie2_3
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 141
+        width: 280
+        height: 525
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zombie2_4
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 141
+        width: 328
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zombie2_5
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 157
+        width: 276
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zombie2_6
+      rect:
+        serializedVersion: 2
+        x: 2030
+        y: 117
+        width: 330
+        height: 538
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zombie2_7
+      rect:
+        serializedVersion: 2
+        x: 2392
+        y: 133
+        width: 220
+        height: 560
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zombie2_8
+      rect:
+        serializedVersion: 2
+        x: 2723
+        y: 160
+        width: 227
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
