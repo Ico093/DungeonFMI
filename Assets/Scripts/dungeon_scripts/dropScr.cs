@@ -5,6 +5,7 @@ public class dropScr : MonoBehaviour {
 
 	string type;
 	int value;
+	int score;
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +30,12 @@ public class dropScr : MonoBehaviour {
 	}
 	public int GetValue() {
 		return value;
+	}
+	public void SetScore(int _score) {
+		score = _score;
+	}
+	public int GetScore() {
+		return score;
 	}
 
 }

@@ -19,14 +19,17 @@ public class onDead : MonoBehaviour {
 			if(rand==1) {
 				tempCoinHelper.SetType("health");
 				tempCoinHelper.SetValue(20);
+				tempCoinHelper.SetScore(20);
 			}
 			else if(rand==2) {
 				tempCoinHelper.SetType("weapon");
 				tempCoinHelper.SetValue(1);
+				tempCoinHelper.SetScore(45);
 			}
 			else if(rand==3) {
 				tempCoinHelper.SetType("dmg");
 				tempCoinHelper.SetValue(5);
+				tempCoinHelper.SetValue(50);
 			}
 			else Debug.Log ("1111");
 		}
