@@ -46,22 +46,25 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\BrickScript.cs" />
-     <Compile Include="Assets\Scripts\ConstructBG.cs" />
      <Compile Include="Assets\Scripts\FMITrigger.cs" />
      <Compile Include="Assets\Scripts\LabyrinthMove.cs" />
-     <Compile Include="Assets\Scripts\ball_move.cs" />
+     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\cameraScr.cs" />
-     <Compile Include="Assets\Scripts\createEnemy.cs" />
      <Compile Include="Assets\Scripts\createLabyrinth.cs" />
-     <Compile Include="Assets\Scripts\dungeonPlayerScr.cs" />
-     <Compile Include="Assets\Scripts\enemyController.cs" />
+     <Compile Include="Assets\Scripts\dungeon_scripts\EnemyProjectile.cs" />
+     <Compile Include="Assets\Scripts\dungeon_scripts\createEnemy.cs" />
+     <Compile Include="Assets\Scripts\dungeon_scripts\dropScr.cs" />
+     <Compile Include="Assets\Scripts\dungeon_scripts\dungeonPlayerScr.cs" />
+     <Compile Include="Assets\Scripts\dungeon_scripts\enemyController.cs" />
+     <Compile Include="Assets\Scripts\dungeon_scripts\fireZombie.cs" />
+     <Compile Include="Assets\Scripts\dungeon_scripts\fmiScr.cs" />
+     <Compile Include="Assets\Scripts\dungeon_scripts\hpBarScr.cs" />
+     <Compile Include="Assets\Scripts\dungeon_scripts\onDead.cs" />
+     <Compile Include="Assets\Scripts\dungeon_scripts\projectileControllerScr.cs" />
      <Compile Include="Assets\Scripts\enemyObjects.cs" />
      <Compile Include="Assets\Scripts\mainMenu.cs" />
-     <Compile Include="Assets\Scripts\padMove.cs" />
+     <Compile Include="Assets\Scripts\npc_scritps\npc1.cs" />
      <Compile Include="Assets\Scripts\playerControllerScr.cs" />
-     <Compile Include="Assets\Scripts\projectileControllerScr.cs" />
-     <Compile Include="Assets\fmiScr.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
