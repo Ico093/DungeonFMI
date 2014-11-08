@@ -24,6 +24,7 @@ public class LabyrinthMove : MonoBehaviour {
 		
 	void FixedUpdate () 
 	{
+		//Application.LoadLevel ("Dungeon");
 		PlayerMovement ();
 	}
 	public void setTransform(int x, int y) {

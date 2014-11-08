@@ -1,7 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{9B3420F7-E158-20D9-DFC4-DE19549C73D4}") = "DungeonFMI", "Assembly-CSharp.csproj", "{5CF3B35A-9EAC-466F-AEA4-8EED57CF7A9B}"
+Project("{9B3420F7-E158-20D9-DFC4-DE19549C73D4}") = "DungeonFMI", "Assembly-CSharp-vs.csproj", "{5CF3B35A-9EAC-466F-AEA4-8EED57CF7A9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,7 +17,10 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																				GlobalSection(MonoDevelopProperties) = preSolution
+																																						GlobalSection(MonoDevelopProperties) = preSolution
+=======
+																												GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> 149d73e9be9c7c010745f71b78870703cceb7e2a
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
