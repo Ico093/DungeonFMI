@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class dungeonPlayerScr : MonoBehaviour {
@@ -11,8 +11,10 @@ public class dungeonPlayerScr : MonoBehaviour {
 	int mode = 3;
 	public int hp;
 	public int maxHP;
+	public float dieTimeInHole;
+	bool canMove=true;
 	int dmg;
-	long score;
+	public static long score;
 	
 	float moveHorizontal;
 	float moveVertical;
@@ -20,6 +22,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 
 	SpriteRenderer sr;
 	public Sprite[] states;
+	public Sprite dead_sprite;
 
 	public void SetMode(int m)
 	{
@@ -52,7 +55,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 	}
 	public long getScore() {
 				return score;
-		}
+	}
 	public void addScore(long _score) {
 		score+=_score;
 	}
@@ -66,8 +69,10 @@ public class dungeonPlayerScr : MonoBehaviour {
 	
 	void Update () 
 	{
-		PlayerMovement ();
-		ShootLogic ();
+		if (canMove) {
+						PlayerMovement ();
+						ShootLogic ();
+				}
 	}
 	
 	void PlayerMovement()
@@ -190,8 +195,9 @@ public class dungeonPlayerScr : MonoBehaviour {
 			var another = other.gameObject.GetComponent<EnemyProjectile> ();
 			TakeHit(another.GetDamage());
 			Destroy(other.gameObject);
-
+			
 		}
+
 
 	}
 
@@ -200,11 +206,19 @@ public class dungeonPlayerScr : MonoBehaviour {
 		hp -= damage;
 		if (hp <= 0) {
 			Debug.Log ("YOU DEAD MOTHERFUCKER!!!! score:"+score);
-				}
+			Application.LoadLevel ("EndGame");
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
+		if (other.tag == "hole") {
+			sr.sprite=dead_sprite;
+			//this.rigidbody2D.isKinematic=true;
+			this.collider2D.isTrigger=true;
+			canMove=false;
+			
+		}
 		if (other.tag == "powerUp") {
 
 			var another = other.GetComponent<dropScr> ();
