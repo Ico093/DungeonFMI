@@ -160,6 +160,14 @@ public class dungeonPlayerScr : MonoBehaviour {
 				another.SetAS(another.GetASCD());
 			}
 		}
+		else if (other.gameObject.tag == "OtherZombie") {
+			var another = other.gameObject.GetComponent<fireZombie> ();
+			if(another.GetAS () <= 0.0f)
+			{
+				this.TakeHit(another.GetDamage());
+				another.SetAS(another.GetASCD());
+			}
+		}
 
 		if (other.gameObject.tag == "enemyProjectile") {
 			var another = other.gameObject.GetComponent<EnemyProjectile> ();
@@ -181,9 +189,13 @@ public class dungeonPlayerScr : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.tag == "powerUp") {
+
 			var another = other.GetComponent<dropScr> ();
+
+
 			string type=another.getType();
 			int value=another.GetValue();
+			Destroy(another.gameObject);
 			Debug.Log(type);
 			switch(type) {
 			case "damage":SetDamage((GetDamage()+value));
@@ -195,7 +207,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 			default:break;
 				
 			}
-			Destroy(another.gameObject);
+
 			
 		}
 		
