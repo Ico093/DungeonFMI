@@ -7,6 +7,8 @@ public class enemyController : MonoBehaviour {
 
 	public GameObject player;    // Reference to the last global sighting of the player.
 
+	public GameObject corpse;
+
 	public int hp;
 	int dmg;
 	float attackSpeed;
@@ -91,6 +93,9 @@ public class enemyController : MonoBehaviour {
 	{
 		hp -= damage;
 		if (hp <= 0) {
+			var tempCorpse = Instantiate(corpse, transform.position, Quaternion.identity) as GameObject;
+			var CheckForCoin = tempCorpse.GetComponent<onDead> ();
+			CheckForCoin.setCoin();
 			Destroy (this.gameObject);
 				}
 	}
