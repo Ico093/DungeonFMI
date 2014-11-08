@@ -1,14 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\dungeon_scripts\onDead.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\playerControllerScr.cs">
     <Files>
-      <File FileName="Assets\Scripts\FMITrigger.cs" Line="8" Column="3" />
-      <File FileName="Assets\Scripts\dungeon_scripts\dropScr.cs" Line="11" Column="3" />
-      <File FileName="Assets\Scripts\dungeon_scripts\onDead.cs" Line="15" Column="33" />
-      <File FileName="Assets\Scripts\dungeon_scripts\fireZombie.cs" Line="92" Column="38" />
-      <File FileName="Assets\Scripts\dungeon_scripts\enemyController.cs" Line="87" Column="40" />
-      <File FileName="Assets\Scripts\dungeon_scripts\createEnemy.cs" Line="20" Column="89" />
-      <File FileName="Assets\Scripts\dungeon_scripts\dungeonPlayerScr.cs" Line="164" Column="58" />
+      <File FileName="Assets\Scripts\cameraScr.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\playerControllerScr.cs" Line="76" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
