@@ -9,6 +9,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 	
 	float moveHorizontal;
 	float moveVertical;
+	Vector2 direction = new Vector2(0, 1);
 	
 	void Start () 
 	{
@@ -26,6 +27,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 		moveHorizontal = Input.GetAxis ("Horizontal") ;
 		moveVertical = Input.GetAxis ("Vertical") ;
 		transform.Translate (new Vector3(moveHorizontal, moveVertical, 0).normalized * movementSpeed * Time.deltaTime);
+		SetDirection ();
 	}
 	
 	void Shoot()
@@ -34,8 +36,37 @@ public class dungeonPlayerScr : MonoBehaviour {
 		if (projectileTimer <= 0 || Input.GetKeyDown(KeyCode.Space)) {
 			var tempProjectile = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
 			var projectileHelper = tempProjectile.GetComponent<projectileControllerScr>();
-			projectileHelper.SetTargetPosition(new Vector2(0, 1));
+			projectileHelper.SetTargetPosition(direction);
 			projectileTimer = 0.4f;
+		}
+	}
+
+	void SetDirection()
+	{
+		if (moveHorizontal == 0 && moveVertical > 0) {
+			direction.x = 0;
+			direction.y = 1;
+		} else if (moveHorizontal == 0 && moveVertical < 0) {
+			direction.x = 0;
+			direction.y = -1;
+		} else if (moveHorizontal > 0 && moveVertical == 0) {
+			direction.x = 1;
+			direction.y = 0;
+		} else if (moveHorizontal < 0 && moveVertical == 0) {
+			direction.x = -1;
+			direction.y = 0;
+		} else if (moveHorizontal > 0 && moveVertical > 0) {
+			direction.x = 1;
+			direction.y = 1;
+		} else if (moveHorizontal < 0 && moveVertical > 0) {
+			direction.x = -1;
+			direction.y = 1;
+		} else if (moveHorizontal > 0 && moveVertical < 0) {
+			direction.x = 1;
+			direction.y = -1;
+		} else if (moveHorizontal < 0 && moveVertical < 0) {
+			direction.x = -1;
+			direction.y = -1;
 		}
 	}
 }

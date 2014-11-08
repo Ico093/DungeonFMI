@@ -46,7 +46,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+     <Compile Include="Assets\Scripts\EnemyObjects.cs" />
      <Compile Include="Assets\Scripts\LabyrinthMove.cs" />
+     <Compile Include="Assets\Scripts\MainMenu.cs" />
+=======
+>>>>>>> 6c28557381211b46296eb488ce5fa340da60c562
      <Compile Include="Assets\Scripts\cameraScr.cs" />
      <Compile Include="Assets\Scripts\createEnemy.cs" />
      <Compile Include="Assets\Scripts\createLabyrinth.cs" />
