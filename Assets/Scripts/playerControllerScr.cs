@@ -37,7 +37,6 @@ public class playerControllerScr : MonoBehaviour {
 		Vector2 direction = new Vector2 ();	
 		transform.Translate (new Vector3(moveHorizontal, moveVertical, 0).normalized * movementSpeed * Time.deltaTime);
 		if (moveHorizontal == 0 && moveVertical > 0) {
-			Debug.Log("TOP");
 			direction.x = 0;
 			direction.y = 1;
 			sr.sprite = top;
@@ -70,7 +69,7 @@ public class playerControllerScr : MonoBehaviour {
 			direction.y = -1;
 			sr.sprite = bottomLeft;
 		} else { 
-			Debug.Log(" default " );
+			//Debug.Log(" default " );
 		}
 	}
 }
