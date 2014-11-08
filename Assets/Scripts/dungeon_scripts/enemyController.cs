@@ -8,7 +8,7 @@ public class enemyController : MonoBehaviour {
 	public GameObject player;    // Reference to the last global sighting of the player.
 
 	public GameObject corpse;
-
+	public int score;
 	public int hp;
 	int dmg;
 	float attackSpeed;
@@ -57,6 +57,7 @@ public class enemyController : MonoBehaviour {
 		animator.speed = 0.5f;
 		SetDamage (10);
 		SetAS (3.0f);
+		score = 100;
 		attackSpeedCD = attackSpeed;
 	}
 	
@@ -93,6 +94,7 @@ public class enemyController : MonoBehaviour {
 	{
 		hp -= damage;
 		if (hp <= 0) {
+			player.gameObject.GetComponent<dungeonPlayerScr>().addScore(score);
 			var tempCorpse = Instantiate(corpse, transform.position, Quaternion.identity) as GameObject;
 			var CheckForCoin = tempCorpse.GetComponent<onDead> ();
 			CheckForCoin.setCoin();

@@ -10,7 +10,7 @@ public class fireZombie : MonoBehaviour {
 	public GameObject player;
 
 	public GameObject corpse;
-
+	public int score;
 	public int hp;
 	public int dmg;
 	float attackSpeed;
@@ -61,6 +61,7 @@ public class fireZombie : MonoBehaviour {
 		player = GameObject.Find ("player");
 		SetDamage (10);
 		SetAS (0.5f);
+		score = 100;
 		attackSpeedCD = attackSpeed;
 	}
 	
@@ -129,6 +130,7 @@ public class fireZombie : MonoBehaviour {
 	{
 		hp -= damage;
 		if (hp <= 0) {
+			player.gameObject.GetComponent<dungeonPlayerScr>().addScore(score);
 			var tempCorpse = Instantiate(corpse, transform.position, Quaternion.identity) as GameObject;
 			var CheckForCoin = tempCorpse.GetComponent<onDead> ();
 			CheckForCoin.setCoin();
