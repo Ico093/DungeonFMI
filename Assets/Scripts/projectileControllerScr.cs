@@ -39,4 +39,11 @@ public class projectileControllerScr : MonoBehaviour {
 	{
 		Destroy (this.gameObject);
 	}
+
+	void OnTriggerEnter2d(Collider2D other)
+	{
+		Debug.Log ("COLLIDE");
+		Destroy (this.gameObject);
+		Destroy (other.gameObject);
+	}
 }

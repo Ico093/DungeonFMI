@@ -17,8 +17,6 @@ public class enemyController : MonoBehaviour {
 		
 		Vector3 player_position=player.transform.position;
 		transform.position -= ((transform.position - player_position).normalized * chaseSpeed * Time.deltaTime);
-		Debug.Log (transform.position);
-		
 	
 	}
 
