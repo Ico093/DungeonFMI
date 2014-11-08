@@ -11,6 +11,8 @@ public class dungeonPlayerScr : MonoBehaviour {
 	int mode = 3;
 	public int hp;
 	public int maxHP;
+	public float dieTimeInHole;
+	bool canMove=true;
 	int dmg;
 	public static long score;
 	
@@ -20,6 +22,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 
 	SpriteRenderer sr;
 	public Sprite[] states;
+	public Sprite dead_sprite;
 
 	public void SetMode(int m)
 	{
@@ -66,8 +69,10 @@ public class dungeonPlayerScr : MonoBehaviour {
 	
 	void Update () 
 	{
-		PlayerMovement ();
-		ShootLogic ();
+		if (canMove) {
+						PlayerMovement ();
+						ShootLogic ();
+				}
 	}
 	
 	void PlayerMovement()
@@ -190,8 +195,9 @@ public class dungeonPlayerScr : MonoBehaviour {
 			var another = other.gameObject.GetComponent<EnemyProjectile> ();
 			TakeHit(another.GetDamage());
 			Destroy(other.gameObject);
-
+			
 		}
+
 
 	}
 
@@ -206,6 +212,13 @@ public class dungeonPlayerScr : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
+		if (other.tag == "hole") {
+			sr.sprite=dead_sprite;
+			//this.rigidbody2D.isKinematic=true;
+			this.collider2D.isTrigger=true;
+			canMove=false;
+			
+		}
 		if (other.tag == "powerUp") {
 
 			var another = other.GetComponent<dropScr> ();

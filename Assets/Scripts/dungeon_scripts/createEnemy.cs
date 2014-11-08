@@ -16,7 +16,7 @@ public class createEnemy : MonoBehaviour {
 	void Update () {
 		int rand = Random.Range (1, 1000);
 		if (rand > 990 ) {
-			Vector3 tempZombieVector=new Vector3 (Random.Range (1, 15), 6f, 0f);
+			Vector3 tempZombieVector=new Vector3 (Random.Range (-30, -10), 0f, 0f);
 			var tempZombie = (GameObject)Instantiate (Random.Range (1, 10) > 5 ? fireZombie : zombie,tempZombieVector , Quaternion.identity);
 			count++;
 				}
