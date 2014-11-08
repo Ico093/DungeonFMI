@@ -17,7 +17,7 @@ public class projectileControllerScr : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
 	{
 		transform.position += (Vector3)projectileDirection * projectileSpeed * Time.deltaTime;		
 	}
@@ -40,9 +40,8 @@ public class projectileControllerScr : MonoBehaviour {
 		Destroy (this.gameObject);
 	}
 
-	void OnTriggerEnter2d(Collider2D other)
+	void OnTriggerEnter2D(Collider2D other)
 	{
-		Debug.Log ("COLLIDE");
 		Destroy (this.gameObject);
 		Destroy (other.gameObject);
 	}

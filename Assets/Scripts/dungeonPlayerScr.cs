@@ -6,10 +6,16 @@ public class dungeonPlayerScr : MonoBehaviour {
 	public float movementSpeed;
 	public GameObject projectile;
 	float projectileTimer = 0.4f;
+	int mode = 3;
 	
 	float moveHorizontal;
 	float moveVertical;
 	Vector2 direction = new Vector2(0, 1);
+
+	public void SetMode(int m)
+	{
+		mode = m;
+	}
 	
 	void Start () 
 	{
@@ -19,7 +25,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 	void Update () 
 	{
 		PlayerMovement ();
-		Shoot ();
+		ShootLogic ();
 	}
 	
 	void PlayerMovement()
@@ -30,15 +36,58 @@ public class dungeonPlayerScr : MonoBehaviour {
 		SetDirection ();
 	}
 	
-	void Shoot()
+	void ShootLogic()
 	{
 		projectileTimer -= Time.deltaTime;
-		if (projectileTimer <= 0 || Input.GetKeyDown(KeyCode.Space)) {
-			var tempProjectile = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
-			var projectileHelper = tempProjectile.GetComponent<projectileControllerScr>();
-			projectileHelper.SetTargetPosition(direction);
+		if (projectileTimer <= 0 && Input.GetKeyDown(KeyCode.Space)) {
+			ShootMode (mode);
 			projectileTimer = 0.4f;
 		}
+	}
+
+	void ShootMode(int mode)
+	{
+		switch (mode) 
+		{
+		case 1:
+			Shoot (0f);
+			break;
+		case 2:
+			Shoot (-45f);
+			Shoot (45f);
+			break;
+		case 3:
+			Shoot (0f);
+			Shoot (-45f);
+			Shoot (45f);
+			break;
+		default:
+			Shoot (0f);
+			break;
+		}
+	}
+
+	void Shoot(float angle)
+	{
+		Vector2 tempDirection = direction;
+		if (angle != 0.0f)
+		{
+			float rad = (angle * Mathf.PI) / 180;
+			Matrix4x4 rotMatrix = new Matrix4x4();
+			rotMatrix.SetRow(0, new Vector4(Mathf.Cos (rad), -Mathf.Sin (rad), 0 ,0));
+			rotMatrix.SetRow(1, new Vector4(Mathf.Sin (rad), Mathf.Cos (rad), 0 ,0));
+			rotMatrix.SetRow(2, new Vector4(0, 0, 1 ,0));
+			rotMatrix.SetRow(3, new Vector4(0, 0, 0 ,1));
+			Debug.Log (rotMatrix.m00);
+			Debug.Log (rotMatrix.m01);
+			Debug.Log (rotMatrix.m10);
+			Debug.Log (rotMatrix.m11);
+			Debug.Log (rad);
+			tempDirection = rotMatrix * direction;
+		}
+		var tempProjectile = Instantiate (projectile, transform.position, Quaternion.identity) as GameObject;
+		var projectileHelper = tempProjectile.GetComponent<projectileControllerScr> ();
+		projectileHelper.SetTargetPosition (tempDirection.normalized);
 	}
 
 	void SetDirection()
