@@ -1,9 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\dungeonPlayerScr.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\playerControllerScr.cs">
     <Files>
-      <File FileName="Assets\Scripts\dungeonPlayerScr.cs" Line="72" Column="37" />
-      <File FileName="Assets\Scripts\projectileControllerScr.cs" Line="30" Column="47" />
+      <File FileName="Assets\Scripts\dungeonPlayerScr.cs" Line="30" Column="19" />
+      <File FileName="Assets\Scripts\projectileControllerScr.cs" Line="27" Column="32" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
