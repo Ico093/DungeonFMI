@@ -81,24 +81,17 @@ public class dungeonPlayerScr : MonoBehaviour {
 
 	void ShootMode(int mode)
 	{
-		switch (mode) 
-		{
-		case 1:
-			Shoot (0f);
-			break;
-		case 2:
-			Shoot (-15f);
-			Shoot (15f);
-			break;
-		case 3:
-			Shoot (0f);
-			Shoot (-15f);
-			Shoot (15f);
-			break;
-		default:
-			Shoot (0f);
-			break;
-		}
+		for (int i=mode; i>0; i-=2) {
+			if(i>1) {
+				float angle=i*5f;
+				Shoot (angle);
+				Shoot (-angle);
+			}
+			if (i==1) {
+				Shoot (0f);
+			}
+				}
+
 	}
 
 	void Shoot(float angle)
@@ -166,7 +159,14 @@ public class dungeonPlayerScr : MonoBehaviour {
 				this.TakeHit(another.GetDamage());
 				another.SetAS(another.GetASCD());
 			}
-				}
+		}
+
+		if (other.gameObject.tag == "enemyProjectile") {
+			var another = other.gameObject.GetComponent<EnemyProjectile> ();
+			TakeHit(another.GetDamage());
+			Destroy(other.gameObject);
+
+		}
 
 	}
 
@@ -176,5 +176,28 @@ public class dungeonPlayerScr : MonoBehaviour {
 		if (hp <= 0) {
 			Debug.Log ("YOU DEAD MOTHERFUCKER!!!!");
 				}
+	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.tag == "powerUp") {
+			var another = other.GetComponent<dropScr> ();
+			string type=another.getType();
+			int value=another.GetValue();
+			Debug.Log(type);
+			switch(type) {
+			case "damage":SetDamage((GetDamage()+value));
+				break;
+			case "weapon":if(mode<9)mode+=value;
+				break;
+			case "health":SetHp(GetHp()+value);
+				break;
+			default:break;
+				
+			}
+			Destroy(another.gameObject);
+			
+		}
+		
 	}
 }
