@@ -28,7 +28,6 @@ public class playerControllerScr : MonoBehaviour {
 	{
 		PlayerMovement ();
 		sr.sortingOrder = (int)(-transform.position.y * 1000);
-		Debug.Log (sr.sortingOrder);
 	}
 
 	void PlayerMovement()

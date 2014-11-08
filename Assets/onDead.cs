@@ -18,6 +18,7 @@ public class onDead : MonoBehaviour {
 			var tempCoin = Instantiate(coin, this.transform.position, Quaternion.identity) as GameObject;
 			var tempCoinHelper = tempCoin.GetComponent<dropScr>();
 			int rand=Random.Range(1,3);
+			Debug.Log(rand);
 			if(rand==1) {
 				tempCoinHelper.SetType("health");
 				tempCoinHelper.SetValue(20);
@@ -32,7 +33,7 @@ public class onDead : MonoBehaviour {
 			}
 
 		}
-		timeLeft = Random.Range (3, 5);
+		timeLeft = 1.5f;
 	}
 	// Update is called once per frame
 	void Update () {

@@ -181,9 +181,13 @@ public class dungeonPlayerScr : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.tag == "powerUp") {
+
 			var another = other.GetComponent<dropScr> ();
+
+
 			string type=another.getType();
 			int value=another.GetValue();
+			Destroy(another.gameObject);
 			Debug.Log(type);
 			switch(type) {
 			case "damage":SetDamage((GetDamage()+value));
@@ -195,7 +199,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 			default:break;
 				
 			}
-			Destroy(another.gameObject);
+
 			
 		}
 		
