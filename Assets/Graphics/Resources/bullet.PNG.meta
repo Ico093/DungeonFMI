@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: eb32251caac539f4d95c13f7f55bcc20
 TextureImporter:
   fileIDToRecycleName:
@@ -7,11 +6,6 @@ TextureImporter:
     21300002: bullet_1
     21300004: bullet_2
     21300006: bullet_3
-=======
-guid: 4053088e36cae5842afa9e4953d84de8
-TextureImporter:
-  fileIDToRecycleName: {}
->>>>>>> f59b9729f7e7fbf7fd6ba41d99cc341576ba7a10
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -35,7 +29,6 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-<<<<<<< HEAD
     aniso: 1
     mipBias: -1
     wrapMode: 1
@@ -43,15 +36,6 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-=======
-    aniso: -1
-    mipBias: -1
-    wrapMode: -1
-  nPOTScale: 0
-  lightmap: 0
-  compressionQuality: 50
-  spriteMode: 1
->>>>>>> f59b9729f7e7fbf7fd6ba41d99cc341576ba7a10
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -62,7 +46,6 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-<<<<<<< HEAD
     sprites:
     - name: bullet_0
       rect:
@@ -102,10 +85,7 @@ TextureImporter:
         width: 142
         height: 323
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-=======
-    sprites: []
->>>>>>> f59b9729f7e7fbf7fd6ba41d99cc341576ba7a10
   spritePackingTag: 
   userData: 
