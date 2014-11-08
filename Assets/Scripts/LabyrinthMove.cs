@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class playerControllerScr : MonoBehaviour {
-
+public class LabyrinthMove : MonoBehaviour {
 	public float movementSpeed;
-
+		
 	float moveHorizontal;
 	float moveVertical;
-
+		
 	SpriteRenderer sr;
 	public Sprite top;
 	public Sprite bottom;
@@ -17,20 +16,21 @@ public class playerControllerScr : MonoBehaviour {
 	public Sprite topRight;
 	public Sprite bottomLeft;
 	public Sprite bottomRight;
-	
+		
 	void Start () 
 	{
 		sr = GetComponent<SpriteRenderer>();
-		sr.sortingOrder = (int)(-transform.position.y * 1000);
 	}
-
+		
 	void FixedUpdate () 
 	{
 		PlayerMovement ();
-		sr.sortingOrder = (int)(-transform.position.y * 1000);
-		Debug.Log (sr.sortingOrder);
 	}
+	public void setTransform(int x, int y) {
+		Vector3 coords =new Vector3(x,y,0);
+		transform.position = coords;
 
+		}
 	void PlayerMovement()
 	{
 		moveHorizontal = Input.GetAxis ("Horizontal") ;
@@ -71,7 +71,13 @@ public class playerControllerScr : MonoBehaviour {
 			direction.y = -1;
 			sr.sprite = bottomLeft;
 		} else { 
-			Debug.Log(" default " );
+			//Debug.Log(" default " );
 		}
+	}
+		
+		
+	void SetDirection()
+	{
+
 	}
 }

@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{781D78EC-4A50-AF59-55F6-19E0727BA8CB}</ProjectGuid>
+	<ProjectGuid>{5CF3B35A-9EAC-466F-AEA4-8EED57CF7A9B}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -39,19 +39,25 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Unity/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Unity/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\FMITrigger.cs" />
+     <Compile Include="Assets\Scripts\LabyrinthMove.cs" />
      <Compile Include="Assets\Scripts\cameraScr.cs" />
-     <Compile Include="Assets\EnemyObjects.cs" />
      <Compile Include="Assets\Scripts\createEnemy.cs" />
+     <Compile Include="Assets\Scripts\createLabyrinth.cs" />
+     <Compile Include="Assets\Scripts\dungeonPlayerScr.cs" />
      <Compile Include="Assets\Scripts\enemyController.cs" />
+     <Compile Include="Assets\Scripts\enemyObjects.cs" />
+     <Compile Include="Assets\Scripts\mainMenu.cs" />
      <Compile Include="Assets\Scripts\playerControllerScr.cs" />
-     <Compile Include="Assets\createEnemy.cs" />
+     <Compile Include="Assets\Scripts\projectileControllerScr.cs" />
+     <Compile Include="Assets\fmiScr.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
