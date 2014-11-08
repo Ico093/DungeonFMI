@@ -56,8 +56,8 @@ public class fireZombie : MonoBehaviour {
 	}
 	
 	void Start () {
-		//animator = this.GetComponent<Animator> ();
-		//animator.speed = 0.5f;
+		animator = this.GetComponent<Animator> ();
+		animator.speed = 0.5f;
 		player = GameObject.Find ("player");
 		SetDamage (10);
 		SetAS (0.5f);
@@ -80,6 +80,24 @@ public class fireZombie : MonoBehaviour {
 		transform.position = tempVector;
 		float moveHorizontal = (player_position - transform.position).normalized.x;
 		float moveVertical = (player_position - transform.position).normalized.y;
+		if (moveHorizontal == 0 && moveVertical > 0) {	// up
+			animator.SetInteger("Direction", 0);
+		} else if (moveHorizontal == 0 && moveVertical < 0) {	//down
+			animator.SetInteger("Direction", 2);
+		} else if (moveHorizontal > 0 && moveVertical == 0) {	//right
+			animator.SetInteger("Direction", 3);
+		} else if (moveHorizontal < 0 && moveVertical == 0) {	//left
+			animator.SetInteger("Direction", 1);
+		} else if (moveHorizontal > 0 && moveVertical > 0) {	//up right
+			animator.SetInteger("Direction", 0);
+		} else if (moveHorizontal < 0 && moveVertical > 0) {	//up left
+			animator.SetInteger("Direction", 1);
+		} else if (moveHorizontal > 0 && moveVertical < 0) {	//down right
+			animator.SetInteger("Direction", 3);
+		} else if (moveHorizontal < 0 && moveVertical < 0) {	//down left
+			animator.SetInteger("Direction", 2);
+		}
+
 
 		direction.x = moveHorizontal;
 		direction.y = moveVertical;

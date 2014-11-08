@@ -160,6 +160,14 @@ public class dungeonPlayerScr : MonoBehaviour {
 				another.SetAS(another.GetASCD());
 			}
 		}
+		else if (other.gameObject.tag == "OtherZombie") {
+			var another = other.gameObject.GetComponent<fireZombie> ();
+			if(another.GetAS () <= 0.0f)
+			{
+				this.TakeHit(another.GetDamage());
+				another.SetAS(another.GetASCD());
+			}
+		}
 
 		if (other.gameObject.tag == "enemyProjectile") {
 			var another = other.gameObject.GetComponent<EnemyProjectile> ();
