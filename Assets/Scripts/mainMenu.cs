@@ -3,7 +3,6 @@ using System.Collections;
 
 public class mainMenu : MonoBehaviour
 {
-
 		// Use this for initialization
 		void Start ()
 		{
@@ -18,28 +17,39 @@ public class mainMenu : MonoBehaviour
 
 		void OnGUI ()
 		{
-				// Make a group on the center of the screen
-				GUI.BeginGroup (new Rect (Screen.width / 2 - 100, Screen.height / 2 - 100, 200, 200));
-				// All rectangles are now adjusted to the group. (0,0) is the topleft corner of the group.
-		
-				// We'll make a box so you can see where the group is on-screen.
-				GUI.Box (new Rect (0, 0, 200, 200), "Dungeon FMI");
+				
+				int maxGroupWidth = Screen.width / 2;
+				int maxroupHeight = Screen.height - 100;
 
-				if (GUI.Button (new Rect (60, 40, 80, 30), "Play")) {
+				GUIStyle logoStyle = GUI.skin.GetStyle ("label");
+				logoStyle.fontSize = 40;
+				logoStyle.fontStyle = FontStyle.Bold;
+				logoStyle.alignment = TextAnchor.UpperCenter;
+
+				GUIStyle buttonStyle = GUI.skin.GetStyle ("button");
+				buttonStyle.fontSize = 20;
+				buttonStyle.alignment = TextAnchor.MiddleCenter;
+
+				// Make a group on the center of the screen
+				GUI.BeginGroup (new Rect (maxGroupWidth - maxGroupWidth / 2, 50, maxGroupWidth, maxroupHeight));
+
+				GUI.Box (new Rect (0, 0, maxGroupWidth, maxroupHeight), "Dungeon FMI", logoStyle);
+
+				if (GUI.Button (new Rect (25, maxroupHeight / 5 * 2, maxGroupWidth - 50, maxroupHeight / 6), "Play", buttonStyle)) {
 						if (Event.current.button == 0) {
 								Application.LoadLevel ("OutdoorScene");
 						}
 				}
 
-				if (GUI.Button (new Rect (60, 80, 80, 30), "How to play")) {
+				if (GUI.Button (new Rect (25, maxroupHeight / 5 * 3, maxGroupWidth - 50, maxroupHeight / 6), "How to play", buttonStyle)) {
 						if (Event.current.button == 0) {
-
+								Application.LoadLevel ("HowToPlay");
 						}
 				}
 
-				if (GUI.Button (new Rect (60, 120, 80, 30), "Exit")) {
+				if (GUI.Button (new Rect (25, maxroupHeight / 5 * 4, maxGroupWidth - 50, maxroupHeight / 6), "Exit", buttonStyle)) {
 						if (Event.current.button == 0) {
-				
+								Application.Quit ();
 						}
 				}
 
