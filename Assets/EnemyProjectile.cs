@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class projectileControllerScr : MonoBehaviour {
-	
+public class EnemyProjectile : MonoBehaviour {
+
 	public float projectileSpeed;
 	int dmg;
 	
@@ -35,30 +35,30 @@ public class projectileControllerScr : MonoBehaviour {
 		projectileDirection = projectileTargetPosition - projectileStartPosition;
 		projectileDirection.Normalize ();
 	}
-
+	
 	public void SetDamage(int damage)
 	{
 		dmg = damage;
-		}
-
+	}
+	
 	public int GetDamage()
 	{
 		return dmg;
-		}
+	}
 	
 	void OnBecameInvisible()
 	{
 		Destroy (this.gameObject);
 	}
-
+	
 	void OnTriggerEnter2D(Collider2D other)
 	{
-
+		
 		Destroy (this.gameObject);
-		if (other.tag == "BasicZombie") {
-			var another = other.GetComponent<enemyController>();
+		if (other.tag == "Player") {
+			var another = other.GetComponent<dungeonPlayerScr>();
 			another.TakeHit(this.GetDamage());
-				}
-
+		}
+		
 	}
 }

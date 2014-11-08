@@ -39,22 +39,27 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>D:/Unity/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>D:/Unity/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\EnemyProjectile.cs" />
+     <Compile Include="Assets\Scripts\FMITrigger.cs" />
+     <Compile Include="Assets\Scripts\LabyrinthMove.cs" />
      <Compile Include="Assets\Scripts\cameraScr.cs" />
      <Compile Include="Assets\Scripts\createEnemy.cs" />
      <Compile Include="Assets\Scripts\createLabyrinth.cs" />
      <Compile Include="Assets\Scripts\dungeonPlayerScr.cs" />
      <Compile Include="Assets\Scripts\enemyController.cs" />
      <Compile Include="Assets\Scripts\enemyObjects.cs" />
+     <Compile Include="Assets\Scripts\hpBarScr.cs" />
      <Compile Include="Assets\Scripts\mainMenu.cs" />
      <Compile Include="Assets\Scripts\playerControllerScr.cs" />
      <Compile Include="Assets\Scripts\projectileControllerScr.cs" />
+     <Compile Include="Assets\fireZombie.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
