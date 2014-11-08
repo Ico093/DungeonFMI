@@ -2,7 +2,16 @@ fileFormatVersion: 2
 guid: efc17df537cbcdb44bf926f1de612220
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - projectile: {instanceID: 0}
+  - top: {fileID: 21300006, guid: 563740f7e07858a4faf8746514e3ad2b, type: 3}
+  - bottom: {fileID: 21300014, guid: 563740f7e07858a4faf8746514e3ad2b, type: 3}
+  - left: {fileID: 21300002, guid: 563740f7e07858a4faf8746514e3ad2b, type: 3}
+  - right: {fileID: 21300010, guid: 563740f7e07858a4faf8746514e3ad2b, type: 3}
+  - topLeft: {fileID: 21300004, guid: 563740f7e07858a4faf8746514e3ad2b, type: 3}
+  - topRight: {fileID: 21300008, guid: 563740f7e07858a4faf8746514e3ad2b, type: 3}
+  - bottomLeft: {fileID: 21300000, guid: 563740f7e07858a4faf8746514e3ad2b, type: 3}
+  - bottomRight: {fileID: 21300012, guid: 563740f7e07858a4faf8746514e3ad2b, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
