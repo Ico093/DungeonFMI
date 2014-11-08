@@ -2,27 +2,26 @@
 using System.Collections;
 
 public class projectileControllerScr : MonoBehaviour {
-
+	
 	public float projectileSpeed;
-
+	
 	Vector2 projectileStartPosition;
 	Vector2 projectileTargetPosition;
-
+	
 	Vector2 projectileDirection = new Vector2(1, 1);
-
+	
 	// Use this for initialization
-	//void Start (Vector3 position) {
-	//	projectileStartPosition = position;
-	//}
+	void Start ()
+	{
+		projectileStartPosition = transform.position;
+	}
 	
 	// Update is called once per frame
-	void Update () {
-		//transform.position += projectileDirection * projectileSpeed * Time.deltaTime;
-		//		if(transform.position - 
-		//projectile position update
-		//if projectile is further than camera sees  - Destroy
+	void Update ()
+	{
+		transform.position += (Vector3)projectileDirection * projectileSpeed * Time.deltaTime;		
 	}
-
+	
 	public void SetTargetPosition(Vector2 target)
 	{
 		Matrix4x4 matrix = new Matrix4x4 ();
@@ -34,5 +33,10 @@ public class projectileControllerScr : MonoBehaviour {
 		projectileTargetPosition = projectileStartPosition + tempVector;
 		projectileDirection = projectileTargetPosition - projectileStartPosition;
 		projectileDirection.Normalize ();
+	}
+	
+	void OnBecameInvisible()
+	{
+		Destroy (this.gameObject);
 	}
 }
