@@ -27,6 +27,7 @@ public class mainMenu : MonoBehaviour
 
 				if (GUI.Button (new Rect (60, 40, 80, 30), "Play")) {
 						if (Event.current.button == 0) {
+								Application.LoadLevel ("OutdoorScene");
 						}
 				}
 
