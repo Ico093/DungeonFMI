@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class projectileControllerScr : MonoBehaviour {
-	
+public class EnemyProjectile : MonoBehaviour {
+
 	public float projectileSpeed;
+	int dmg;
 	
 	Vector2 projectileStartPosition;
 	Vector2 projectileTargetPosition;
@@ -21,7 +22,10 @@ public class projectileControllerScr : MonoBehaviour {
 	{
 		transform.position += (Vector3)projectileDirection * projectileSpeed * Time.deltaTime;		
 	}
-	
+	public void setSpeed(float speed) {
+		projectileSpeed *= speed/2f;
+
+	}
 	public void SetTargetPosition(Vector2 target)
 	{
 		Matrix4x4 matrix = new Matrix4x4 ();
@@ -35,14 +39,21 @@ public class projectileControllerScr : MonoBehaviour {
 		projectileDirection.Normalize ();
 	}
 	
+	public void SetDamage(int damage)
+	{
+		dmg = damage;
+	}
+	
+	public int GetDamage()
+	{
+		return dmg;
+	}
+	
 	void OnBecameInvisible()
 	{
 		Destroy (this.gameObject);
 	}
+	
 
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		Destroy (this.gameObject);
-		Destroy (other.gameObject);
-	}
+
 }
