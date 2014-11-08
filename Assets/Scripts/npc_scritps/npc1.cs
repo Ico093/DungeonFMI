@@ -13,13 +13,12 @@ public class npc1 : MonoBehaviour
 		void Start ()
 		{
 				dialog = new List<string> ();
-				dialog.Add ("Viktor vika begai!");
-				dialog.Add ("Nema");
-				dialog.Add ("Shto?");
-				dialog.Add ("Shtot si punta");
-				dialog.Add ("Mari ouuuuu");
-				dialog.Add ("Problem?");
-				dialog.Add ("Mi ne");
+				dialog.Add ("Hey, Bighead, Can you help me with a matter of life and death ?");
+				dialog.Add ("Ofcourse, what seems to be the problem, but hurry up.");
+				dialog.Add ("I have uploaded a selfie on Facebook, and there is no internet to check how many" +
+					"likes i have ");
+				dialog.Add ("Oh, how blond of you! I will raid the Faculty to release you from this burden, mis.");
+				dialog.Add ("You are the spine of my existence !");
 		}
 	
 		// Update is called once per frame
