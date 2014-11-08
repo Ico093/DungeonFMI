@@ -7,6 +7,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 	public GameObject projectile;
 	float projectileTimer = 0.2f;
 	float projectileTimerMAX = 0.2f;
+	float projectileAngle = -90.0f;
 	int mode = 3;
 	public int hp;
 	public int maxHP;
@@ -117,6 +118,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 		var tempProjectile = Instantiate (projectile, transform.position, Quaternion.identity) as GameObject;
 		var projectileHelper = tempProjectile.GetComponent<projectileControllerScr> ();
 		projectileHelper.SetTargetPosition (tempDirection.normalized);
+		projectileHelper.Rotate (projectileAngle);
 		projectileHelper.SetDamage (5);
 	}
 
@@ -125,34 +127,42 @@ public class dungeonPlayerScr : MonoBehaviour {
 		if (moveHorizontal == 0 && moveVertical > 0) {
 			direction.x = 0;
 			direction.y = 1;
+			projectileAngle = 0.0f;
 			sr.sprite = states[3];
 		} else if (moveHorizontal == 0 && moveVertical < 0) {
 			direction.x = 0;
 			direction.y = -1;
+			projectileAngle = -180.0f;
 			sr.sprite = states[7];
 		} else if (moveHorizontal > 0 && moveVertical == 0) {
 			direction.x = 1;
 			direction.y = 0;
+			projectileAngle = -90.0f;
 			sr.sprite = states[5];
 		} else if (moveHorizontal < 0 && moveVertical == 0) {
 			direction.x = -1;
 			direction.y = 0;
+			projectileAngle = 90.0f;
 			sr.sprite = states[1];
 		} else if (moveHorizontal > 0 && moveVertical > 0) {
 			direction.x = 1;
 			direction.y = 1;
+			projectileAngle = -45.0f;
 			sr.sprite = states[4];
 		} else if (moveHorizontal < 0 && moveVertical > 0) {
 			direction.x = -1;
 			direction.y = 1;
+			projectileAngle = 45.0f;
 			sr.sprite = states[2];
 		} else if (moveHorizontal > 0 && moveVertical < 0) {
 			direction.x = 1;
 			direction.y = -1;
+			projectileAngle = -135.0f;
 			sr.sprite = states[6];
 		} else if (moveHorizontal < 0 && moveVertical < 0) {
 			direction.x = -1;
 			direction.y = -1;
+			projectileAngle = 135.0f;
 			sr.sprite = states[0];
 		}
 	}
