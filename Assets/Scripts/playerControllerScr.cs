@@ -17,7 +17,7 @@ public class playerControllerScr : MonoBehaviour {
 		states = Resources.LoadAll<Sprite>("brain");
 	}
 
-	void Update () 
+	void FixedUpdate () 
 	{
 		PlayerMovement ();
 	}
