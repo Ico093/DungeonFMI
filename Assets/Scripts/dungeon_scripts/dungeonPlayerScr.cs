@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class dungeonPlayerScr : MonoBehaviour {
@@ -12,11 +12,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 	public int hp;
 	public int maxHP;
 	int dmg;
-<<<<<<< .merge_file_a03592
-	long score;
-=======
 	public static long score;
->>>>>>> .merge_file_a02764
 	
 	float moveHorizontal;
 	float moveVertical;
@@ -54,12 +50,9 @@ public class dungeonPlayerScr : MonoBehaviour {
 	{
 		return maxHP;
 	}
-<<<<<<< .merge_file_a03592
 	public long getScore() {
 				return score;
-		}
-=======
->>>>>>> .merge_file_a02764
+	}
 	public void addScore(long _score) {
 		score+=_score;
 	}
@@ -206,12 +199,9 @@ public class dungeonPlayerScr : MonoBehaviour {
 	{
 		hp -= damage;
 		if (hp <= 0) {
-<<<<<<< .merge_file_a03592
 			Debug.Log ("YOU DEAD MOTHERFUCKER!!!! score:"+score);
-=======
 			Application.LoadLevel ("EndGame");
->>>>>>> .merge_file_a02764
-				}
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
