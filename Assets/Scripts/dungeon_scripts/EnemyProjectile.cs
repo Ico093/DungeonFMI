@@ -58,6 +58,12 @@ public class EnemyProjectile : MonoBehaviour {
 	{
 		Destroy (this.gameObject);
 	}
+
+	void OnCollisionEnter2D(Collision2D col)
+	{
+		if(col.collider.tag =="arenaWall")
+			Destroy (this.gameObject);
+	}
 	
 
 
