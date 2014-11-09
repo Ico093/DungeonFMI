@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{5CF3B35A-9EAC-466F-AEA4-8EED57CF7A9B}</ProjectGuid>
+	<ProjectGuid>{F54E3807-51C5-FF54-9157-4BE45ADF7C2F}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-UnityScript</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -46,40 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Controller.cs" />
-     <Compile Include="Assets\Scripts\BrickScript.cs" />
-     <Compile Include="Assets\Scripts\CameraLooper.cs" />
-     <Compile Include="Assets\Scripts\ConstructBG.cs" />
-     <Compile Include="Assets\Scripts\FMITrigger.cs" />
-     <Compile Include="Assets\Scripts\FZFTrigger.cs" />
-     <Compile Include="Assets\Scripts\FinishLabyrinth.cs" />
-     <Compile Include="Assets\Scripts\GlobalPlayer.cs" />
-     <Compile Include="Assets\Scripts\LabyrinthMove.cs" />
-     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
-     <Compile Include="Assets\Scripts\arena_scripts\createArenaEnemy.cs" />
-     <Compile Include="Assets\Scripts\ball_move.cs" />
-     <Compile Include="Assets\Scripts\cameraScr.cs" />
-     <Compile Include="Assets\Scripts\createLabyrinth.cs" />
-     <Compile Include="Assets\Scripts\dungeon_scripts\EnemyProjectile.cs" />
-     <Compile Include="Assets\Scripts\dungeon_scripts\createEnemy.cs" />
-     <Compile Include="Assets\Scripts\dungeon_scripts\dropScr.cs" />
-     <Compile Include="Assets\Scripts\dungeon_scripts\dungeonPlayerScr.cs" />
-     <Compile Include="Assets\Scripts\dungeon_scripts\enemyController.cs" />
-     <Compile Include="Assets\Scripts\dungeon_scripts\fireZombie.cs" />
-     <Compile Include="Assets\Scripts\dungeon_scripts\hpBarScr.cs" />
-     <Compile Include="Assets\Scripts\dungeon_scripts\onDead.cs" />
-     <Compile Include="Assets\Scripts\dungeon_scripts\projectileControllerScr.cs" />
-     <Compile Include="Assets\Scripts\enemyObjects.cs" />
-     <Compile Include="Assets\Scripts\exetendpath.cs" />
-     <Compile Include="Assets\Scripts\fmiScr.cs" />
-     <Compile Include="Assets\Scripts\gravity.cs" />
-     <Compile Include="Assets\Scripts\hmfScr.cs" />
-     <Compile Include="Assets\Scripts\menu_scripts\endGame.cs" />
-     <Compile Include="Assets\Scripts\menu_scripts\mainMenu.cs" />
-     <Compile Include="Assets\Scripts\npc_scritps\npc1.cs" />
-     <Compile Include="Assets\Scripts\npc_scritps\npc2.cs" />
-     <Compile Include="Assets\Scripts\padMove.cs" />
-     <Compile Include="Assets\Scripts\playerControllerScr.cs" />
+     <Compile Include="Assets\FZFScript.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
