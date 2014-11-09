@@ -5,6 +5,8 @@ public class dungeonPlayerScr : MonoBehaviour {
 	
 	public float movementSpeed;
 	public GameObject projectile;
+	public GameObject endScreen;
+
 	float projectileTimer = 0.2f;
 	float projectileTimerMAX = 0.2f;
 	float projectileAngle = -90.0f;
@@ -68,7 +70,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 		score = 0;
 	}
 	
-	void Update () 
+	void FixedUpdate () 
 	{
 						PlayerMovement ();
 						ShootLogic ();
@@ -80,6 +82,14 @@ public class dungeonPlayerScr : MonoBehaviour {
 	{
 		moveHorizontal = Input.GetAxis ("Horizontal") ;
 		moveVertical = Input.GetAxis ("Vertical") ;
+		if(moveVertical>0){
+			Vector3 EndStageVector=endScreen.transform.position;
+
+			EndStageVector.y=this.transform.position.y-endScreen.collider2D.bounds.size.y/2-3;
+			Debug.Log(EndStageVector.y);
+			Debug.Log("aaa");
+			endScreen.transform.position=EndStageVector;
+		}
 		transform.Translate (new Vector3(moveHorizontal, moveVertical, 0).normalized * movementSpeed * Time.deltaTime);
 		SetDirection ();
 	}
