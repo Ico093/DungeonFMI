@@ -3,7 +3,31 @@ using System.Collections;
 
 public class padMove : MonoBehaviour {
 
+	public static int n = 5;
+	int type;
+	public static int[] _value = new int[n];
+	int valueIndex = 0;
+	public static int _score = 0;
+
 	public float speed;
+
+	public void SetType(int _type) {
+		type = _type;
+	}
+
+	public void SetValue(int value) {
+		_value[type] += value;
+	}
+	public int[] GetValue() {
+		return _value;
+	}
+	public void SetScore(int score) {
+		_score += score;
+	}
+	public int GetScore() {
+		return _score;
+	}
+
 
 	// Use this for initialization
 	void Start () {
@@ -20,23 +44,5 @@ public class padMove : MonoBehaviour {
 
 
 	
-	}
-
-	void onCollisionEnter2D(Collision2D other)
-	{
-		Debug.Log ("COLLISION BOYZ");
-		if (other.gameObject.tag == "powerUp") {
-			var another = other.gameObject.GetComponent<dropScr>();
-
-				}
-	}
-
-	void onTriggerEnter2D(Collider2D other)
-	{
-		Debug.Log ("COLLISION BOYZ");
-		if (other.gameObject.tag == "powerUp") {
-			var another = other.gameObject.GetComponent<dropScr>();
-			
-		}
 	}
 }
