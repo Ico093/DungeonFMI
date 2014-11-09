@@ -8,6 +8,7 @@ public class ConstructBG : MonoBehaviour {
 	public GameObject brick4;
 	public GameObject brick5;
 	public GameObject brick6;
+	GameObject[] bricks = new GameObject[6];
 	public Vector2 start;
 	public Vector2 size;
 	private int count;
@@ -15,9 +16,7 @@ public class ConstructBG : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		for (int i = 0; i < 6; i++) {
-			
-				}
+		GameObject
 
 		count = 0;
 		for (int i=0; i<5; i++)
