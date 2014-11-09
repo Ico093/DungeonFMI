@@ -4,8 +4,8 @@ using System.Collections;
 public class exetendpath : MonoBehaviour {
 
 	public GameObject player;
-	public GameObject hole1;
-	public GameObject hole2;
+	public GameObject hole1 = null;
+	public GameObject hole2 = null;
 	void FixedUpdate()
 	{
 
