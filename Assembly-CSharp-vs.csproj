@@ -46,10 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CameraLooper.cs" />
      <Compile Include="Assets\Controller.cs" />
-     <Compile Include="Assets\FinishLabyrinth.cs" />
      <Compile Include="Assets\Scripts\BrickScript.cs" />
+     <Compile Include="Assets\Scripts\CameraLooper.cs" />
      <Compile Include="Assets\Scripts\ConstructBG.cs" />
      <Compile Include="Assets\Scripts\FMITrigger.cs" />
      <Compile Include="Assets\Scripts\FinishLabyrinth.cs" />

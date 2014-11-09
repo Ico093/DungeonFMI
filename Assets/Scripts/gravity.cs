@@ -52,6 +52,7 @@ public class gravity : MonoBehaviour {
 			another.SetScore(GetScore());
 			another.SetType(int.Parse(getType()));
 			another.SetValue(GetValue());
+			Destroy (this.gameObject);
 				}
 					
 	}

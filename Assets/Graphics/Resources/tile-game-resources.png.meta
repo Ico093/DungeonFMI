@@ -1,7 +1,24 @@
 fileFormatVersion: 2
 guid: 351d5de65692b2d4c8f9ea374a64bdd9
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: tile-game-resources_0
+    21300002: tile-game-resources_1
+    21300004: tile-game-resources_2
+    21300006: tile-game-resources_3
+    21300008: tile-game-resources_4
+    21300010: tile-game-resources_5
+    21300012: tile-game-resources_6
+    21300014: tile-game-resources_7
+    21300016: tile-game-resources_8
+    21300018: tile-game-resources_9
+    21300020: tile-game-resources_10
+    21300022: tile-game-resources_11
+    21300024: tile-game-resources_12
+    21300026: tile-game-resources_13
+    21300028: tile-game-resources_14
+    21300030: tile-game-resources_15
+    21300032: tile-game-resources_16
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -25,13 +42,13 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -42,6 +59,126 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: tile-game-resources_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 935
+        width: 308
+        height: 136
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tile-game-resources_1
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 935
+        width: 309
+        height: 136
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tile-game-resources_2
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 763
+        width: 308
+        height: 137
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tile-game-resources_3
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 765
+        width: 309
+        height: 136
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tile-game-resources_4
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 526
+        width: 308
+        height: 137
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tile-game-resources_5
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 524
+        width: 309
+        height: 137
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tile-game-resources_6
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 359
+        width: 79
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tile-game-resources_7
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 300
+        width: 351
+        height: 46
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tile-game-resources_8
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 29
+        width: 124
+        height: 188
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tile-game-resources_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 36
+        width: 148
+        height: 139
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tile-game-resources_12
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 0
+        width: 114
+        height: 231
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tile-game-resources_16
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 28
+        width: 217
+        height: 105
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
