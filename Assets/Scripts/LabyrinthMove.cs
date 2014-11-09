@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LabyrinthMove : MonoBehaviour {
 	public float movementSpeed;
-		
+	public static int routerNumber;
 	float moveHorizontal;
 	float moveVertical;
 		
@@ -19,11 +19,13 @@ public class LabyrinthMove : MonoBehaviour {
 		
 	void Start () 
 	{
+		routerNumber = 0;
 		sr = GetComponent<SpriteRenderer>();
 	}
 		
 	void FixedUpdate () 
 	{
+		Debug.Log (routerNumber);
 		//Application.LoadLevel ("Dungeon");
 		PlayerMovement ();
 	}
@@ -39,7 +41,6 @@ public class LabyrinthMove : MonoBehaviour {
 		Vector2 direction = new Vector2 ();	
 		transform.Translate (new Vector3(moveHorizontal, moveVertical, 0).normalized * movementSpeed * Time.deltaTime);
 		if (moveHorizontal == 0 && moveVertical > 0) {
-			Debug.Log("TOP");
 			direction.x = 0;
 			direction.y = 1;
 			sr.sprite = top;
@@ -77,8 +78,33 @@ public class LabyrinthMove : MonoBehaviour {
 	}
 		
 		
-	void SetDirection()
+	
+	void OnTriggerEnter2D(Collider2D other)
 	{
-
-	}
+		
+				if (other.tag == "powerUp") {
+			
+						var another = other.GetComponent<dropScr> ();
+			
+			
+						string type = another.getType ();
+						int value = another.GetValue ();
+						int _score = another.GetScore ();
+			
+						
+						Destroy (another.gameObject);
+						Debug.Log (type);
+						switch (type) {
+						
+						case "router":
+								routerNumber++;
+								break;
+						default:
+								break;
+				
+						}
+			
+			
+				}
+		}
 }

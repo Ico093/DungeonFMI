@@ -12,6 +12,7 @@ public class createLabyrinth : MonoBehaviour
 {
 	public int height;
 	public int width;
+	public Sprite sp;
 	private int[,] maze;
 	public int[] start=new int[2];
 	public int[] end=new int[2];
@@ -30,7 +31,15 @@ public class createLabyrinth : MonoBehaviour
 		for (int i=0; i<height; i++) {
 			for (int j=0; j<width; j++)
 				if (maze[i,j]==1) Instantiate(labyrinth_wall,new Vector3(i*2,j*2,0),Quaternion.identity);
-				else if (maze[i,j]==2)Instantiate(bonus1,new Vector3(i*2,j*2,0),Quaternion.identity);
+				else if (maze[i,j]==2){
+				var bonus=Instantiate(bonus1,new Vector3(i*2,j*2,0),Quaternion.identity) as GameObject;
+				var bonus_functions=bonus.GetComponent<dropScr>();
+				bonus_functions.SetType("router");
+				bonus_functions.SetSprite(sp);
+				bonus_functions.SetValue(1);
+			
+			
+			}
 				}
 		Instantiate(finish_sprite,new Vector3(last_r*2,last_c*2,0),Quaternion.identity);
 

@@ -19,7 +19,6 @@ public class dropScr : MonoBehaviour {
 
 	public void SetType(string _type) {
 		type = _type;
-		Debug.Log (type);
 	}
 	public string getType() {
 		return type;
@@ -38,10 +37,10 @@ public class dropScr : MonoBehaviour {
 		return score;
 	}
 
-	public void SetSprite(SpriteRenderer newSprite)
+	public void SetSprite(Sprite newSprite)
 	{
 		SpriteRenderer sprite = GetComponent<SpriteRenderer> ();
-		sprite = newSprite;
+		sprite.sprite =newSprite;
 	}
 
 }
