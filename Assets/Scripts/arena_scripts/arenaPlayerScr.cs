@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class dungeonPlayerScr : MonoBehaviour {
+public class arenaPlayerScr : MonoBehaviour {
 	
 
 	public static int routerNumber=0;
