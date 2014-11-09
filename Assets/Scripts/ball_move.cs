@@ -6,6 +6,7 @@ public class ball_move : MonoBehaviour {
 	// Constant speed of the ball
 	public float speed = 5f;
 	public GameObject pad;
+	public GameObject drop;
 	
 	// Keep track of the direction in which the ball is moving
 	private Vector2 velocity;
@@ -46,6 +47,37 @@ public class ball_move : MonoBehaviour {
 			var function=BG.GetComponent<ConstructBG>();
 			function.DestroyedBrick();
 			Destroy(col.gameObject);
+			if(Random.Range (1, 100) > 50)
+			{
+				var tempDrop = Instantiate(drop, col.transform.position, Quaternion.identity) as GameObject;
+				tempDrop.rigidbody2D.gravityScale = 1;
+				Destroy (tempDrop.rigidbody2D);
+				tempDrop.AddComponent<gravity>();
+				var tempDropHelper = tempDrop.GetComponent<dropScr>();
+				tempDropHelper.SetScore(100);
+				int type = Random.Range (1, 5);
+				switch (type)
+				{
+				case 1:
+					tempDropHelper.SetType("ms");
+					tempDropHelper.SetValue(2);
+					break;
+				case 2:
+					tempDropHelper.SetType ("as");
+					tempDropHelper.SetValue(1); 	//how many tenths of a second the as is improved
+					break;
+				case 3:
+					tempDropHelper.SetType("boostHP");
+					tempDropHelper.SetValue(100);
+					break;
+				case 4:
+					tempDropHelper.SetType("bigeer,faster,stroger,better");
+					tempDropHelper.SetValue(10);	//percent value
+					break;
+				default:
+					break;
+				}
+			}
 				}
 		if (col.gameObject.tag == "pad") 
 			diff = (this.transform.position.x- pad.transform.position.x) / 3f + 1;
