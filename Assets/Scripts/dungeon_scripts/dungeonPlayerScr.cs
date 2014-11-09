@@ -5,6 +5,8 @@ public class dungeonPlayerScr : MonoBehaviour {
 	
 	public float movementSpeed;
 	public GameObject projectile;
+	public GameObject endScreen;
+
 	float projectileTimer = 0.2f;
 	float projectileTimerMAX = 0.2f;
 	float projectileAngle = -90.0f;
@@ -23,6 +25,32 @@ public class dungeonPlayerScr : MonoBehaviour {
 	public Sprite[] states;
 	public Sprite dead_sprite;
 
+
+	//Styles
+	public Texture2D boxBackground;
+	public Texture2D router;
+
+	void OnGUI() {
+		GUIStyle boxStyle=GUI.skin.GetStyle("box");
+		boxStyle.fontSize = 30;
+		boxStyle.alignment = TextAnchor.MiddleCenter;
+		boxStyle.normal.background = boxBackground;
+
+		int maxGroupWidth = Screen.width;
+		int maxGroupHeight = Screen.height / 8;
+		GUI.BeginGroup (new Rect (0, maxGroupHeight * 7, maxGroupWidth, maxGroupHeight));
+
+		int singleWidth = maxGroupWidth / 3;
+
+		GUI.Box(new Rect(0,0,singleWidth,maxGroupHeight),"Health: " + GetHp ().ToString(),boxStyle);
+
+
+		GUI.Box(new Rect(singleWidth,0,singleWidth,maxGroupHeight),new GUIContent("x100",router),boxStyle);
+		GUI.Box(new Rect(singleWidth*2,0,singleWidth,maxGroupHeight),"Score: " + getScore().ToString(),boxStyle);
+
+
+		GUI.EndGroup ();
+		}
 
 	public void SetMode(int m)
 	{
@@ -68,7 +96,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 		score = 0;
 	}
 	
-	void Update () 
+	void FixedUpdate () 
 	{
 						PlayerMovement ();
 						ShootLogic ();
@@ -80,6 +108,14 @@ public class dungeonPlayerScr : MonoBehaviour {
 	{
 		moveHorizontal = Input.GetAxis ("Horizontal") ;
 		moveVertical = Input.GetAxis ("Vertical") ;
+		if(moveVertical>0){
+			Vector3 EndStageVector=endScreen.transform.position;
+
+			EndStageVector.y=this.transform.position.y-endScreen.collider2D.bounds.size.y/2-3;
+			Debug.Log(EndStageVector.y);
+			Debug.Log("aaa");
+			endScreen.transform.position=EndStageVector;
+		}
 		transform.Translate (new Vector3(moveHorizontal, moveVertical, 0).normalized * movementSpeed * Time.deltaTime);
 		SetDirection ();
 	}
@@ -229,11 +265,14 @@ public class dungeonPlayerScr : MonoBehaviour {
 			Destroy(another.gameObject);
 			Debug.Log(type);
 			switch(type) {
-			case "damage":SetDamage((GetDamage()+value));
+			case "damage":
+				SetDamage((GetDamage()+value));
 				break;
-			case "weapon":if(mode<9)mode+=value;
+			case "weapon":
+				if(mode<9)mode+=value;
 				break;
-			case "health":SetHp(GetHp()+value);
+			case "health":
+				if(GetHp()+value<= GETMAXHP())SetHp(GetHp()+value);
 				break;
 			default:break;
 				
