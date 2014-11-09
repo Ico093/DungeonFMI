@@ -30,10 +30,10 @@ public class Controller : MonoBehaviour {
 		
 		int singleWidth = maxGroupWidth / 4;
 		
-		GUI.Box(new Rect(0,0,singleWidth,maxGroupHeight),new GUIContent(""+1+"MS",bonus1),boxStyle);
-		GUI.Box(new Rect(singleWidth,0,singleWidth,maxGroupHeight),new GUIContent(""+2+"AS",bonus2),boxStyle);
-		GUI.Box(new Rect(singleWidth*2,0,singleWidth,maxGroupHeight),new GUIContent(""+3+"HP",bonus3),boxStyle);
-		GUI.Box(new Rect(singleWidth*3,0,singleWidth,maxGroupHeight),new GUIContent(""+4+"DMG",bonus4) ,boxStyle);
+		GUI.Box(new Rect(0,0,singleWidth,maxGroupHeight),new GUIContent(""+padMove._value[1].ToString()+" MS",bonus1),boxStyle);
+		GUI.Box(new Rect(singleWidth,0,singleWidth,maxGroupHeight),new GUIContent(""+"0."+padMove._value[2].ToString()+" AS",bonus2),boxStyle);
+		GUI.Box(new Rect(singleWidth*2,0,singleWidth,maxGroupHeight),new GUIContent(""+padMove._value[3].ToString()+" HP",bonus3),boxStyle);
+		GUI.Box(new Rect(singleWidth*3,0,singleWidth,maxGroupHeight),new GUIContent(""+padMove._value[4].ToString()+" DMG",bonus4) ,boxStyle);
 		
 		
 		GUI.EndGroup ();

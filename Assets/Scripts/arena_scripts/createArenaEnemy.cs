@@ -29,7 +29,13 @@ public class createArenaEnemy : MonoBehaviour {
 
 	void SpawnZombie()
 	{
-		Vector3 zobmiePos = Random.onUnitSphere * radius;
-		var tempZombie = (GameObject)Instantiate (Random.Range (1, 10) > 5 ? fireZombie : zombie, zobmiePos , Quaternion.identity);
+		Vector3 zombiePos = Random.onUnitSphere * radius;
+		if(zombiePos.y > 0)
+		{
+			Vector3 tempZombiePos = zombiePos;
+			tempZombiePos.y *=-1;
+			zombiePos = tempZombiePos;
+		}
+		var tempZombie = (GameObject)Instantiate (Random.Range (1, 10) > 5 ? fireZombie : zombie, zombiePos , Quaternion.identity);
 	}
 }
