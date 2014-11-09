@@ -7,7 +7,13 @@ public class ball_move : MonoBehaviour {
 	public float speed = 5f;
 	public GameObject pad;
 	public GameObject drop;
+
+	public Sprite movSp;
+	public Sprite attSp;
+	public Sprite hpBoost;
+	public Sprite dmgUp;
 	
+
 	// Keep track of the direction in which the ball is moving
 	private Vector2 velocity;
 	
@@ -65,24 +71,29 @@ public class ball_move : MonoBehaviour {
 				case 1:
 					tempDropHelper.SetType("1");	//ms
 					tempDropHelper.SetValue(2);
+
+					tempDropHelper.SetSprite (movSp);
 					gravity.SetType("1");
 					gravity.SetValue(2);
 					break;
 				case 2:
 					tempDropHelper.SetType ("2");
 					tempDropHelper.SetValue(1); 	//how many tenths of a second the as is improved
+					tempDropHelper.SetSprite (attSp);
 					gravity.SetType ("2");
 					gravity.SetValue(1); 	//how many tenths of a second the as is improved
 					break;
 				case 3:
 					tempDropHelper.SetType("3");	//hp boost
 					tempDropHelper.SetValue(100);
+					tempDropHelper.SetSprite (hpBoost);
 					gravity.SetType("3");
 					gravity.SetValue(100);
 					break;
 				case 4:
 					tempDropHelper.SetType("4");	//bullet size increase
 					tempDropHelper.SetValue(10);	//percent value
+					tempDropHelper.SetSprite (dmgUp);
 					gravity.SetType("4");
 					gravity.SetValue(10);	//percent value
 					break;
