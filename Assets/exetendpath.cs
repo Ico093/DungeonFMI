@@ -15,7 +15,7 @@ public class exetendpath : MonoBehaviour {
 						pos.y += widthOfObject;
 						transform.position = pos;
 						Vector3 vector=new Vector3(Random.Range(1,renderer.bounds.size.x)-renderer.bounds.size.x/2,Random.Range(10,renderer.bounds.size.y)+renderer.bounds.size.y/2,0);
-						Instantiate (hole1, transform.position-vector ,Quaternion.identity);
+						if(this.gameObject.tag=="tiles")Instantiate (hole1, transform.position-vector ,Quaternion.identity);
 				}
 	}
 }
