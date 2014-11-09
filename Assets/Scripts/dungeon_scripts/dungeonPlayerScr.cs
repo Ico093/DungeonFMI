@@ -26,6 +26,32 @@ public class dungeonPlayerScr : MonoBehaviour {
 	public Sprite dead_sprite;
 
 
+	//Styles
+	public Texture2D boxBackground;
+	public Texture2D router;
+
+	void OnGUI() {
+		GUIStyle boxStyle=GUI.skin.GetStyle("box");
+		boxStyle.fontSize = 30;
+		boxStyle.alignment = TextAnchor.MiddleCenter;
+		boxStyle.normal.background = boxBackground;
+
+		int maxGroupWidth = Screen.width;
+		int maxGroupHeight = Screen.height / 8;
+		GUI.BeginGroup (new Rect (0, maxGroupHeight * 7, maxGroupWidth, maxGroupHeight));
+
+		int singleWidth = maxGroupWidth / 3;
+
+		GUI.Box(new Rect(0,0,singleWidth,maxGroupHeight),"Health: " + GetHp ().ToString(),boxStyle);
+
+
+		GUI.Box(new Rect(singleWidth,0,singleWidth,maxGroupHeight),new GUIContent("x100",router),boxStyle);
+		GUI.Box(new Rect(singleWidth*2,0,singleWidth,maxGroupHeight),"Score: " + getScore().ToString(),boxStyle);
+
+
+		GUI.EndGroup ();
+		}
+
 	public void SetMode(int m)
 	{
 		mode = m;
@@ -239,11 +265,14 @@ public class dungeonPlayerScr : MonoBehaviour {
 			Destroy(another.gameObject);
 			Debug.Log(type);
 			switch(type) {
-			case "damage":SetDamage((GetDamage()+value));
+			case "damage":
+				SetDamage((GetDamage()+value));
 				break;
-			case "weapon":if(mode<9)mode+=value;
+			case "weapon":
+				if(mode<9)mode+=value;
 				break;
-			case "health":SetHp(GetHp()+value);
+			case "health":
+				if(GetHp()+value<= GETMAXHP())SetHp(GetHp()+value);
 				break;
 			default:break;
 				
