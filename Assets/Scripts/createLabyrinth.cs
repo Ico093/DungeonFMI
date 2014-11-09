@@ -17,6 +17,10 @@ public class createLabyrinth : MonoBehaviour
 	public int[] end=new int[2];
 	public GameObject labyrinth_wall;
 	public GameObject bonus1;
+	public GameObject finish_sprite;
+	int last_r;
+	int last_c;
+
 	public GameObject player=null;
 
 	void Start() {
@@ -27,8 +31,8 @@ public class createLabyrinth : MonoBehaviour
 			for (int j=0; j<width; j++)
 				if (maze[i,j]==1) Instantiate(labyrinth_wall,new Vector3(i*2,j*2,0),Quaternion.identity);
 				else if (maze[i,j]==2)Instantiate(bonus1,new Vector3(i*2,j*2,0),Quaternion.identity);
-
 				}
+		Instantiate(finish_sprite,new Vector3(last_r*2,last_c*2,0),Quaternion.identity);
 
 
 	}
@@ -53,8 +57,7 @@ public class createLabyrinth : MonoBehaviour
 		// Starting cell
 		var functions = player.GetComponent<LabyrinthMove> ();
 		functions.setTransform (r, c);
-		Debug.Log (r);
-		Debug.Log (c);
+
 		maze[r,c] = 0;
 
 		
@@ -75,7 +78,7 @@ public class createLabyrinth : MonoBehaviour
 				//　Whether 2 cells up is out or not
 				if (r - 2 <= 0)
 					continue;
-				if (maze[r - 2,c] != 0) {
+				if (maze[r - 2,c] == 1) {
 					if (Random.Range(1,100)>80) 
 						maze[r-2,c] = 2;
 					else 
@@ -84,6 +87,8 @@ public class createLabyrinth : MonoBehaviour
 						maze[r-1,c] = 2;
 					else 
 						maze[r-1,c] = 0;
+					last_r=r;
+					last_c=c;
 					recursion(r - 2, c);
 				}
 				break;
@@ -91,7 +96,7 @@ public class createLabyrinth : MonoBehaviour
 				// Whether 2 cells to the right is out or not
 				if (c + 2 >= width - 1)
 					continue;
-				if (maze[r,c + 2] != 0) {
+				if (maze[r,c + 2] == 1) {
 					maze[r,c + 2] = 0;
 					maze[r,c + 1] = 0;
 					recursion(r, c + 2);
