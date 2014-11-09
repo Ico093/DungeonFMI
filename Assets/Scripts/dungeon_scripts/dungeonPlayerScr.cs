@@ -3,8 +3,7 @@ using System.Collections;
 
 public class dungeonPlayerScr : MonoBehaviour {
 	
-	public float movementSpeed;
-	public GameObject projectile;
+
 	public static int routerNumber=0;
 	float movementSpeed = 8 + GlobalPlayer._value [1];
 	public GameObject projectile;
