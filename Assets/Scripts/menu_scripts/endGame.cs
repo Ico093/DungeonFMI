@@ -3,7 +3,7 @@ using System.Collections;
 
 public class endGame : MonoBehaviour
 {
-	 
+		public Texture backgroundImage;
 		// Use this for initialization
 		void Start ()
 		{
@@ -19,6 +19,8 @@ public class endGame : MonoBehaviour
 		{
 				int maxGroupWidth = Screen.width / 2;
 				int maxGroupHeight = Screen.height - 100;
+				
+				GUI.DrawTexture (new Rect(0,0, Screen.width, Screen.height), backgroundImage);
 	
 				GUIStyle endGameStyle = GUI.skin.GetStyle ("label");
 				endGameStyle.fontSize = 40;

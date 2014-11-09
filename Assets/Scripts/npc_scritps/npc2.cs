@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class npc1 : MonoBehaviour
+public class npc2 : MonoBehaviour
 {
 		public bool isDialogOpen = false;
 		public List<string> dialog ;
@@ -13,12 +13,14 @@ public class npc1 : MonoBehaviour
 		void Start ()
 		{
 				dialog = new List<string> ();
-				dialog.Add ("Hey, Bighead, Can you help me with a matter of life and death ?");
-				dialog.Add ("Ofcourse, what seems to be the problem, but hurry up.");
-				dialog.Add ("I have uploaded a selfie on Facebook, and there is no internet to check how many" +
-					"likes i have ");
-				dialog.Add ("Oh, how blond of you! I will raid the Faculty to release you from this burden, mis.");
-				dialog.Add ("You are the spine of my existence !");
+				dialog.Add ("Help, you have seen what is happened here, havent you ?");
+				dialog.Add ("...");
+				dialog.Add ("The zombies have finally figured out, that there is no food for them in USA" );
+				dialog.Add ("...Yes they have and some of my best friends died in the invasion *sob* ");
+				dialog.Add ("Only the people who have passed Analysis and Logical Programming with excellent grades" +
+		              "have survived" );
+				dialog.Add("So I'm one of the few...");
+				dialog.Add("Restore the internet connectivity of the faculty so we can cry out for help !");
 		}
 	
 		// Update is called once per frame
