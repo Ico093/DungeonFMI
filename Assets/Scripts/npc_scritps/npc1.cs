@@ -55,6 +55,7 @@ public class npc1 : MonoBehaviour
 				boxStyle.normal.textColor = Color.black;
 				boxStyle.normal.background = dialogBackground;
 				boxStyle.fontSize = 30;
+				boxStyle.wordWrap = true;
 		
 				GUIStyle buttonStyle = GUI.skin.GetStyle ("button");
 				buttonStyle.alignment = TextAnchor.MiddleCenter;
