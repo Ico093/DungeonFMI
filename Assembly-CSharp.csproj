@@ -47,13 +47,16 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CameraLooper.cs" />
+     <Compile Include="Assets\Controller.cs" />
      <Compile Include="Assets\FinishLabyrinth.cs" />
      <Compile Include="Assets\Scripts\BrickScript.cs" />
      <Compile Include="Assets\Scripts\ConstructBG.cs" />
      <Compile Include="Assets\Scripts\FMITrigger.cs" />
+     <Compile Include="Assets\Scripts\FinishLabyrinth.cs" />
      <Compile Include="Assets\Scripts\GlobalPlayer.cs" />
      <Compile Include="Assets\Scripts\LabyrinthMove.cs" />
      <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
+     <Compile Include="Assets\Scripts\arena_scripts\createArenaEnemy.cs" />
      <Compile Include="Assets\Scripts\ball_move.cs" />
      <Compile Include="Assets\Scripts\cameraScr.cs" />
      <Compile Include="Assets\Scripts\createLabyrinth.cs" />
@@ -67,16 +70,16 @@
      <Compile Include="Assets\Scripts\dungeon_scripts\onDead.cs" />
      <Compile Include="Assets\Scripts\dungeon_scripts\projectileControllerScr.cs" />
      <Compile Include="Assets\Scripts\enemyObjects.cs" />
+     <Compile Include="Assets\Scripts\exetendpath.cs" />
      <Compile Include="Assets\Scripts\fmiScr.cs" />
      <Compile Include="Assets\Scripts\gravity.cs" />
+     <Compile Include="Assets\Scripts\hmfScr.cs" />
      <Compile Include="Assets\Scripts\menu_scripts\endGame.cs" />
      <Compile Include="Assets\Scripts\menu_scripts\mainMenu.cs" />
      <Compile Include="Assets\Scripts\npc_scritps\npc1.cs" />
      <Compile Include="Assets\Scripts\npc_scritps\npc2.cs" />
      <Compile Include="Assets\Scripts\padMove.cs" />
      <Compile Include="Assets\Scripts\playerControllerScr.cs" />
-     <Compile Include="Assets\exetendpath.cs" />
-     <Compile Include="Assets\hmfScr.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
