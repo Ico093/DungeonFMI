@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Controller.cs" />
-     <Compile Include="Assets\GraffitiTrigger.cs" />
      <Compile Include="Assets\Scripts\BrickScript.cs" />
      <Compile Include="Assets\Scripts\CameraLooper.cs" />
      <Compile Include="Assets\Scripts\ConstructBG.cs" />
@@ -58,6 +57,7 @@
      <Compile Include="Assets\Scripts\LabyrinthMove.cs" />
      <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\arena_scripts\arenaPlayerScr.cs" />
+     <Compile Include="Assets\Scripts\arena_scripts\bossScr.cs" />
      <Compile Include="Assets\Scripts\arena_scripts\createArenaEnemy.cs" />
      <Compile Include="Assets\Scripts\ball_move.cs" />
      <Compile Include="Assets\Scripts\cameraScr.cs" />

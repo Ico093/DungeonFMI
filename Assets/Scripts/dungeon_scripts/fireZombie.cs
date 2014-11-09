@@ -61,7 +61,7 @@ public class fireZombie : MonoBehaviour {
 		animator.speed = 0.5f;
 		player = GameObject.Find ("player");
 		SetDamage (10);
-		SetAS (0.5f);
+		SetAS (1f);
 		score = 100;
 		attackSpeedCD = attackSpeed;
 	}
@@ -138,6 +138,7 @@ public class fireZombie : MonoBehaviour {
 
 	public void TakeHit(int damage)
 	{
+		Debug.Log (hp);
 		hp -= damage;
 		if (hp <= 0) {
 			player.gameObject.GetComponent<dungeonPlayerScr>().addScore(score);

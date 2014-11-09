@@ -8,7 +8,8 @@ public class dungeonPlayerScr : MonoBehaviour {
 	float movementSpeed = 8 + GlobalPlayer._value [1];
 	public GameObject projectile;
 	//public GameObject endScreen;
-
+	int killedScore=0;
+	int stageEnd=20;
 	float projectileTimerMAX = 0.5f - GlobalPlayer._value[2] / 10;
 	float projectileTimer;
 	float projectileAngle = -90.0f;
@@ -82,6 +83,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 	
 	public void SetDamage(int damage)
 	{
+		Debug.Log (damage);
 		dmg = damage;
 	}
 	
@@ -103,6 +105,8 @@ public class dungeonPlayerScr : MonoBehaviour {
 
 	void Start () 
 	{
+		stageEnd = 20;
+		killedScore = 0;
 		routerNumber = 0;
 		hp = maxHP;
 		projectileTimer = projectileTimerMAX;
@@ -116,7 +120,10 @@ public class dungeonPlayerScr : MonoBehaviour {
 	{
 		theCamera.position = Vector3.Lerp(cameraStartPos, cameraMoveTo, (Time.time - cameraStartTime)/cameraMoveTime);
 	}
-	
+	void Update ()
+	{
+		if (killedScore==stageEnd) Application.LoadLevel ("OutdoorScene");
+	}
 	void FixedUpdate () 
 	{
 						PlayerMovement ();
@@ -183,7 +190,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 		var projectileHelper = tempProjectile.GetComponent<projectileControllerScr> ();
 		projectileHelper.SetTargetPosition (tempDirection.normalized);
 		projectileHelper.Rotate (projectileAngle);
-		projectileHelper.SetDamage (5);
+		projectileHelper.SetDamage (dmg);
 	}
 
 	void SetDirection()

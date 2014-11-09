@@ -68,8 +68,12 @@ public class projectileControllerScr : MonoBehaviour {
 		}
 		if (other.tag == "OtherZombie") {
 			var another = other.GetComponent<fireZombie>();
+			Debug.Log("DMG"+GetDamage().ToString());
 			another.TakeHit(this.GetDamage());
 		}
+
+
 		
 	}
+	
 }
