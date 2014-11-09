@@ -3,7 +3,4 @@ Temp/
 DungeonFMI-csharp.sln
 DungeonFMI.sln
 DungeonFMI.userprefs
-Assets/Graphics/Resources/dmg.png.meta
-Assets/Graphics/Resources/hp.png.meta
-Assets/Graphics/Resources/karta.png.meta
-Assets/Graphics/Resources/ms.png.meta
+*.meta
