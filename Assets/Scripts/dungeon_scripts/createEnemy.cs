@@ -20,7 +20,7 @@ public class createEnemy : MonoBehaviour {
 	void Update () {
 		if (CurrentTimeSpawn <= 0) {
 					Vector3 tempZombieVector = new Vector3 (Random.Range (-29, -24), player.transform.position.y + 10, 0f);
-var tempZombie = (GameObject)Instantiate (zombie, tempZombieVector, Quaternion.identity);
+			var tempZombie = (GameObject)Instantiate (Random.Range(1,3)>1 ? zombie : fireZombie, tempZombieVector, Quaternion.identity);
 						count++;
 				CurrentTimeSpawn=timeSpawn;
 			timeSpawn -= 1f/ 100f;
