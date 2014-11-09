@@ -5,6 +5,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 	
 	public float movementSpeed;
 	public GameObject projectile;
+	public static int routerNumber=0;
 	//public GameObject endScreen;
 
 	float projectileTimer = 0.5f;
@@ -56,7 +57,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 		GUI.Box(new Rect(0,0,singleWidth,maxGroupHeight),"Health: " + GetHp ().ToString(),boxStyle);
 
 
-		GUI.Box(new Rect(singleWidth,0,singleWidth,maxGroupHeight),new GUIContent("x100",router),boxStyle);
+		GUI.Box(new Rect(singleWidth,0,singleWidth,maxGroupHeight),new GUIContent(""+routerNumber,router),boxStyle);
 		GUI.Box(new Rect(singleWidth*2,0,singleWidth,maxGroupHeight),"Score: " + getScore().ToString(),boxStyle);
 
 
@@ -101,6 +102,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 
 	void Start () 
 	{
+		routerNumber = 0;
 		SetDamage (5);
 		sr = GetComponent<SpriteRenderer>();
 		states = Resources.LoadAll<Sprite>("brain");
@@ -290,6 +292,9 @@ public class dungeonPlayerScr : MonoBehaviour {
 				break;
 			case "health":
 				if(GetHp()+value<= GETMAXHP())SetHp(GetHp()+value);
+				break;
+			case "router":
+				routerNumber++;
 				break;
 			default:break;
 				
