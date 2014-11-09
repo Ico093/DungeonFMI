@@ -19,4 +19,11 @@ public class gravity : MonoBehaviour {
 				}
 		transform.position =new Vector3(transform.position.x, transform.position.y - currVelocity * Time.deltaTime, 0);
 	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		Debug.Log ("aaa");
+
+		
+	}
 }
