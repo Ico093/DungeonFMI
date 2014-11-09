@@ -15,12 +15,12 @@ public class npc2 : MonoBehaviour
 				dialog = new List<string> ();
 				dialog.Add ("Help, you have seen what is happened here, havent you ?");
 				dialog.Add ("...");
-				dialog.Add ("The zombies have finally figured out, that there is no food for them in USA" );
+				dialog.Add ("The zombies have finally figured out, that there is no food for them in USA");
 				dialog.Add ("...Yes they have and some of my best friends died in the invasion *sob* ");
 				dialog.Add ("Only the people who have passed Analysis and Logical Programming with excellent grades" +
-		              "have survived" );
-				dialog.Add("So I'm one of the few...");
-				dialog.Add("Restore the internet connectivity of the faculty so we can cry out for help !");
+						"have survived");
+				dialog.Add ("So I'm one of the few...");
+				dialog.Add ("Restore the internet connectivity of the faculty so we can cry out for help !");
 		}
 	
 		// Update is called once per frame
@@ -56,9 +56,10 @@ public class npc2 : MonoBehaviour
 				boxStyle.alignment = TextAnchor.UpperLeft;
 				boxStyle.normal.textColor = Color.black;
 				boxStyle.normal.background = dialogBackground;
+				boxStyle.fontSize = 30;
 
 				GUIStyle buttonStyle = GUI.skin.GetStyle ("button");
-				buttonStyle.alignment = TextAnchor.LowerCenter;
+				buttonStyle.alignment = TextAnchor.MiddleCenter;
 
 				if (isDialogOpen && dialogCounter < dialog.Count) {
 						if (dialogCounter % 2 == 0) {

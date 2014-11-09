@@ -7,8 +7,8 @@ public class dungeonPlayerScr : MonoBehaviour {
 	public GameObject projectile;
 	//public GameObject endScreen;
 
-	float projectileTimer = 0.2f;
-	float projectileTimerMAX = 0.2f;
+	float projectileTimer = 0.5f;
+	float projectileTimerMAX = 0.5f;
 	float projectileAngle = -90.0f;
 	int mode = 3;
 	public int hp;
