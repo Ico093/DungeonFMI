@@ -72,7 +72,10 @@ public class projectileControllerScr : MonoBehaviour {
 			another.TakeHit(this.GetDamage());
 		}
 
-
+		if (other.tag == "boss") 
+		{
+			bossScr.hp -= this.GetDamage();
+		}
 		
 	}
 	

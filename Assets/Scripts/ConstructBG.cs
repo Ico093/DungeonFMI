@@ -16,14 +16,13 @@ public class ConstructBG : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GameObject
 
 		count = 0;
 		for (int i=0; i<5; i++)
 						for (int j=0; j<3; j++)
 								if (Random.Range (1, 10) > 2) {
 
-										Instantiate (brick, new Vector3 (i * size.x + start.x, j * size.y + start.y, 0), Quaternion.identity);
+										Instantiate (brick1, new Vector3 (i * size.x + start.x, j * size.y + start.y, 0), Quaternion.identity);
 										count++;
 								}
 	}
