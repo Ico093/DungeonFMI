@@ -2,7 +2,12 @@ fileFormatVersion: 2
 guid: b95ccc1dbbf5948499018d1aeed86174
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - coin: {fileID: 100000, guid: 15c77cfd17438314cabca984b0fd8f5a, type: 2}
+  - health: {fileID: 21300000, guid: 91c0ad10d9b42d1419757ee251489286, type: 3}
+  - dmg: {fileID: 21300000, guid: 7d4f3fb5539deee40bd95e2c2d86110b, type: 3}
+  - weapon: {fileID: 21300000, guid: ffc7c096bd02a954380bcb1c3a417dbd, type: 3}
+  - router: {fileID: 21300000, guid: cebbbbe6ea4ed2548b92b35bd11e6b36, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

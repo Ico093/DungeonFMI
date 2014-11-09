@@ -19,6 +19,7 @@ public class dropScr : MonoBehaviour {
 
 	public void SetType(string _type) {
 		type = _type;
+		Debug.Log (type);
 	}
 	public string getType() {
 		return type;

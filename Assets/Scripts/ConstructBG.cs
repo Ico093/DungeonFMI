@@ -16,7 +16,7 @@ public class ConstructBG : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GameObject
+		GameObject brick=null;
 
 		count = 0;
 		for (int i=0; i<5; i++)

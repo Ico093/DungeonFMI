@@ -8,7 +8,8 @@ public class fireZombie : MonoBehaviour {
 	// Reference to the last global sighting of the player.
 	public GameObject projectile;
 	public GameObject player;
-
+	
+	public Sprite[] sprites=new Sprite[4];
 	public GameObject corpse;
 	public int score;
 	public int hp;
@@ -138,13 +139,14 @@ public class fireZombie : MonoBehaviour {
 
 	public void TakeHit(int damage)
 	{
-		Debug.Log (hp);
 		hp -= damage;
 		if (hp <= 0) {
 			player.gameObject.GetComponent<dungeonPlayerScr>().addScore(score);
 			var tempCorpse = Instantiate(corpse, transform.position, Quaternion.identity) as GameObject;
 			var CheckForCoin = tempCorpse.GetComponent<onDead> ();
-			CheckForCoin.setCoin();
+			GameObject _player=GameObject.Find("player");
+			_player.GetComponent<dungeonPlayerScr>().addKill();
+			CheckForCoin.setCoin(sprites);
 			Destroy (this.gameObject);
 		}
 	}

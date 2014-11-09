@@ -6,6 +6,7 @@ public class GlobalPlayer : MonoBehaviour {
 	public static int _score = 0;
 	public static int[] _value = new int[5];
 	public static int _numberOfRouters = 0;
+	public static int _numberOfProjectiles = 0;
 	// Use this for initialization
 	void Start () {
 	

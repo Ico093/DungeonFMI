@@ -8,12 +8,12 @@ public class dungeonPlayerScr : MonoBehaviour {
 	float movementSpeed = 8 + GlobalPlayer._value [1];
 	public GameObject projectile;
 	//public GameObject endScreen;
-	int killedScore=0;
-	int stageEnd=20;
-	float projectileTimerMAX = 0.5f - GlobalPlayer._value[2] / 10;
+	static int killedScore=0;
+	int stageEnd=1;
+	float projectileTimerMAX = Mathf.Max(5 - GlobalPlayer._value[2],2)/10f;
 	float projectileTimer;
 	float projectileAngle = -90.0f;
-	int mode = 1;
+	int mode = 1+GlobalPlayer._numberOfProjectiles;
 	int maxHP = 200 + GlobalPlayer._value [3];
 	int hp;
 	public float dieTimeInHole;
@@ -83,7 +83,6 @@ public class dungeonPlayerScr : MonoBehaviour {
 	
 	public void SetDamage(int damage)
 	{
-		Debug.Log (damage);
 		dmg = damage;
 	}
 	
@@ -105,7 +104,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 
 	void Start () 
 	{
-		stageEnd = 20;
+		stageEnd = 1;
 		killedScore = 0;
 		routerNumber = 0;
 		hp = maxHP;
@@ -115,6 +114,10 @@ public class dungeonPlayerScr : MonoBehaviour {
 		states = Resources.LoadAll<Sprite>("brain");
 		score = 0;
 	}
+	public void addKill() {
+		Debug.Log ("dobavi");
+		killedScore++;
+		}
 
 	void CameraLerp()
 	{
@@ -122,7 +125,8 @@ public class dungeonPlayerScr : MonoBehaviour {
 	}
 	void Update ()
 	{
-		if (killedScore==stageEnd) Application.LoadLevel ("OutdoorScene");
+
+		if (killedScore>=stageEnd) Application.LoadLevel ("OutdoorScene");
 	}
 	void FixedUpdate () 
 	{
@@ -305,6 +309,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 				break;
 			case "router":
 				routerNumber++;
+				Debug.Log(routerNumber);
 				break;
 			default:break;
 				
