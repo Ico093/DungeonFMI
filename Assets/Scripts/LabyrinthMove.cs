@@ -25,7 +25,6 @@ public class LabyrinthMove : MonoBehaviour {
 		
 	void FixedUpdate () 
 	{
-		Debug.Log (routerNumber);
 		//Application.LoadLevel ("Dungeon");
 		PlayerMovement ();
 	}
@@ -81,7 +80,6 @@ public class LabyrinthMove : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		
 				if (other.tag == "powerUp") {
 			
 						var another = other.GetComponent<dropScr> ();
@@ -93,7 +91,6 @@ public class LabyrinthMove : MonoBehaviour {
 			
 						
 						Destroy (another.gameObject);
-						Debug.Log (type);
 						switch (type) {
 						
 						case "router":
@@ -106,5 +103,10 @@ public class LabyrinthMove : MonoBehaviour {
 			
 			
 				}
+
+				if(other.tag=="exitMaze")
+					Application.LoadLevel ("OutdoorScene");
+			
+
 		}
 }
