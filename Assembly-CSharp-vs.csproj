@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CameraLooper.cs" />
      <Compile Include="Assets\Scripts\BrickScript.cs" />
      <Compile Include="Assets\Scripts\ConstructBG.cs" />
      <Compile Include="Assets\Scripts\FMITrigger.cs" />
@@ -58,10 +59,6 @@
      <Compile Include="Assets\Scripts\dungeon_scripts\createEnemy.cs" />
      <Compile Include="Assets\Scripts\dungeon_scripts\dropScr.cs" />
      <Compile Include="Assets\Scripts\dungeon_scripts\dungeonPlayerScr.cs" />
-     <Compile Include="Assets\Scripts\dungeon_scripts\dungeonPlayerScr.cs.BACKUP.6640.cs" />
-     <Compile Include="Assets\Scripts\dungeon_scripts\dungeonPlayerScr.cs.BASE.6640.cs" />
-     <Compile Include="Assets\Scripts\dungeon_scripts\dungeonPlayerScr.cs.LOCAL.6640.cs" />
-     <Compile Include="Assets\Scripts\dungeon_scripts\dungeonPlayerScr.cs.REMOTE.6640.cs" />
      <Compile Include="Assets\Scripts\dungeon_scripts\enemyController.cs" />
      <Compile Include="Assets\Scripts\dungeon_scripts\fireZombie.cs" />
      <Compile Include="Assets\Scripts\dungeon_scripts\hpBarScr.cs" />
@@ -74,6 +71,7 @@
      <Compile Include="Assets\Scripts\npc_scritps\npc1.cs" />
      <Compile Include="Assets\Scripts\padMove.cs" />
      <Compile Include="Assets\Scripts\playerControllerScr.cs" />
+     <Compile Include="Assets\exetendpath.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
