@@ -28,7 +28,7 @@ public class LabyrinthMove : MonoBehaviour {
 		PlayerMovement ();
 	}
 	public void setTransform(int x, int y) {
-		Vector3 coords =new Vector3(x,y,0);
+		Vector3 coords =new Vector3(x*2,y*2,0);
 		transform.position = coords;
 
 		}
