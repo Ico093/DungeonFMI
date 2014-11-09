@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\FMITrigger.cs" />
      <Compile Include="Assets\Scripts\LabyrinthMove.cs" />
      <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
+     <Compile Include="Assets\Scripts\arena_scripts\createArenaEnemy.cs" />
      <Compile Include="Assets\Scripts\ball_move.cs" />
      <Compile Include="Assets\Scripts\cameraScr.cs" />
      <Compile Include="Assets\Scripts\createLabyrinth.cs" />
