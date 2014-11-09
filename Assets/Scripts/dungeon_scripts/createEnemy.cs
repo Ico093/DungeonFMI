@@ -19,16 +19,15 @@ public class createEnemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (CurrentTimeSpawn <= 0) {
-						Vector3 tempZombieVector = new Vector3 (Random.Range (-29, -24), player.transform.position.y + Random.Range (1, floor.renderer.bounds.size.y) / 2, 0f);
-						var tempZombie = (GameObject)Instantiate (Random.Range (1, 10) > 5 ? fireZombie : zombie, tempZombieVector, Quaternion.identity);
+					Vector3 tempZombieVector = new Vector3 (Random.Range (-29, -24), player.transform.position.y + 10, 0f);
+var tempZombie = (GameObject)Instantiate (Random.Range (1, 10) > 5 ? fireZombie : zombie, tempZombieVector, Quaternion.identity);
 						count++;
-					CurrentTimeSpawn=timeSpawn;
+				CurrentTimeSpawn=timeSpawn;
 			timeSpawn -= 1f/ 100f;
 				}
 
 		CurrentTimeSpawn -= Time.deltaTime;
 
-	
 				
 
 	}
