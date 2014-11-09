@@ -41,9 +41,7 @@ public class ball_move : MonoBehaviour {
 	{
 		if (other.tag == "bottom_line") {
 			Debug.Log("umre");
-			GlobalPlayer._value = padMove._value;
-			GlobalPlayer._score += padMove._score;
-
+			Application.LoadLevel ("EndGame");
 				}
 
 		}
@@ -62,6 +60,8 @@ public class ball_move : MonoBehaviour {
 				tempDrop.rigidbody2D.gravityScale = 1;
 				Destroy (tempDrop.rigidbody2D);
 				tempDrop.AddComponent<gravity>();
+				Vector3 spriteSize = new Vector3(10, 10, 0);
+//				tempDrop.renderer.bounds.size. += spriteSize;
 				var gravity = tempDrop.GetComponent<gravity>();
 				var tempDropHelper = tempDrop.GetComponent<dropScr>();
 				tempDropHelper.SetScore(100);
@@ -103,7 +103,7 @@ public class ball_move : MonoBehaviour {
 			}
 				}
 		if (col.gameObject.tag == "pad") 
-			diff = (this.transform.position.x- pad.transform.position.x) / 3f + 1;
+			diff = (this.transform.position.x- pad.transform.position.x + pad.renderer.bounds.size.x) / 3f + 1;
 		// Normal
 		Vector3 N = col.contacts[0].normal;
 		

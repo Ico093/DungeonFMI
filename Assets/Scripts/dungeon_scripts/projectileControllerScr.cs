@@ -15,7 +15,7 @@ public class projectileControllerScr : MonoBehaviour {
 	void Start ()
 	{
 		projectileStartPosition = transform.position;
-		float xtraScale = GlobalPlayer._value [4];
+		float xtraScale = GlobalPlayer._value [4] / 100;
 		transform.localScale += new Vector3 (xtraScale, xtraScale, xtraScale);
 	}
 	
@@ -70,6 +70,12 @@ public class projectileControllerScr : MonoBehaviour {
 			var another = other.GetComponent<fireZombie>();
 			another.TakeHit(this.GetDamage());
 		}
+
+		if (other.tag == "boss") 
+		{
+			bossScr.hp -= this.GetDamage();
+		}
 		
 	}
+	
 }
