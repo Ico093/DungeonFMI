@@ -16,7 +16,7 @@ public class npc1 : MonoBehaviour
 				dialog.Add ("Hey, Bighead, Can you help me with a matter of life and death ?");
 				dialog.Add ("Ofcourse, what seems to be the problem, but hurry up.");
 				dialog.Add ("I have uploaded a selfie on Facebook, and there is no internet to check how many" +
-					"likes i have ");
+						"likes i have ");
 				dialog.Add ("Oh, how blond of you! I will raid the Faculty to release you from this burden, mis.");
 				dialog.Add ("You are the spine of my existence !");
 		}
@@ -54,9 +54,11 @@ public class npc1 : MonoBehaviour
 				boxStyle.alignment = TextAnchor.UpperLeft;
 				boxStyle.normal.textColor = Color.black;
 				boxStyle.normal.background = dialogBackground;
-
+				boxStyle.fontSize = 30;
+				boxStyle.wordWrap = true;
+		
 				GUIStyle buttonStyle = GUI.skin.GetStyle ("button");
-				buttonStyle.alignment = TextAnchor.LowerCenter;
+				buttonStyle.alignment = TextAnchor.MiddleCenter;
 
 				if (isDialogOpen && dialogCounter < dialog.Count) {
 						if (dialogCounter % 2 == 0) {

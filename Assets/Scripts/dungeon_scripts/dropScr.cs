@@ -38,4 +38,10 @@ public class dropScr : MonoBehaviour {
 		return score;
 	}
 
+	public void SetSprite(SpriteRenderer newSprite)
+	{
+		SpriteRenderer sprite = GetComponent<SpriteRenderer> ();
+		sprite = newSprite;
+	}
+
 }

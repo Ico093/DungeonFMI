@@ -21,4 +21,22 @@ public class padMove : MonoBehaviour {
 
 	
 	}
+
+	void onCollisionEnter2D(Collision2D other)
+	{
+		Debug.Log ("COLLISION BOYZ");
+		if (other.gameObject.tag == "powerUp") {
+			var another = other.gameObject.GetComponent<dropScr>();
+
+				}
+	}
+
+	void onTriggerEnter2D(Collider2D other)
+	{
+		Debug.Log ("COLLISION BOYZ");
+		if (other.gameObject.tag == "powerUp") {
+			var another = other.gameObject.GetComponent<dropScr>();
+			
+		}
+	}
 }

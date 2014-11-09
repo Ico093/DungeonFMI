@@ -20,7 +20,7 @@ public class mainMenu : MonoBehaviour
 		void OnGUI ()
 		{
 				
-				int maxGroupWidth = Screen.width / 6;
+		int maxGroupWidth = Screen.width / 6;
 				int maxroupHeight = Screen.height - 100;
 
 				GUI.DrawTexture (new Rect(0,0, Screen.width, Screen.height), backgroundImage);
