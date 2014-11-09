@@ -5,7 +5,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 	
 	public float movementSpeed;
 	public GameObject projectile;
-	public GameObject endScreen;
+	//public GameObject endScreen;
 
 	float projectileTimer = 0.2f;
 	float projectileTimerMAX = 0.2f;
@@ -25,6 +25,17 @@ public class dungeonPlayerScr : MonoBehaviour {
 	public Sprite[] states;
 	public Sprite dead_sprite;
 
+	public Transform theCamera;
+	public float shiftBy;
+	public Transform endScreen;
+	public Transform cameraLoop;
+	float lowerBoundary = -15;
+
+	bool cameraLerping = false;
+	public float cameraMoveTime;
+	float cameraStartTime;
+	Vector3 cameraStartPos;
+	Vector3 cameraMoveTo;
 
 	//Styles
 	public Texture2D boxBackground;
@@ -95,27 +106,33 @@ public class dungeonPlayerScr : MonoBehaviour {
 		states = Resources.LoadAll<Sprite>("brain");
 		score = 0;
 	}
+
+	void CameraLerp()
+	{
+		theCamera.position = Vector3.Lerp(cameraStartPos, cameraMoveTo, (Time.time - cameraStartTime)/cameraMoveTime);
+	}
 	
 	void FixedUpdate () 
 	{
 						PlayerMovement ();
 						ShootLogic ();
-
-				
+						if (cameraLerping) {
+						CameraLerp ();
+				}
 	}
 	
 	void PlayerMovement()
 	{
 		moveHorizontal = Input.GetAxis ("Horizontal") ;
 		moveVertical = Input.GetAxis ("Vertical") ;
-		if(moveVertical>0){
+		/*if(moveVertical>0){
 			Vector3 EndStageVector=endScreen.transform.position;
 
 			EndStageVector.y=this.transform.position.y-endScreen.collider2D.bounds.size.y/2-3;
 			Debug.Log(EndStageVector.y);
 			Debug.Log("aaa");
 			endScreen.transform.position=EndStageVector;
-		}
+		}*/
 		transform.Translate (new Vector3(moveHorizontal, moveVertical, 0).normalized * movementSpeed * Time.deltaTime);
 		SetDirection ();
 	}
@@ -279,6 +296,27 @@ public class dungeonPlayerScr : MonoBehaviour {
 			}
 			
 			
+		}
+		else if(other.tag == "cameraLoop")
+		{
+			cameraStartPos = theCamera.position;
+
+			Vector3 tempPos;
+			tempPos = theCamera.position;
+			tempPos.y += shiftBy;
+			cameraMoveTo = tempPos;
+			
+			tempPos = endScreen.position;
+			tempPos.y += shiftBy;
+			endScreen.position = tempPos;
+			
+			tempPos = cameraLoop.position;
+			tempPos.y += shiftBy;
+			cameraLoop.position = tempPos;
+			
+			lowerBoundary += shiftBy;
+			cameraLerping = true;
+			cameraStartTime = Time.time;
 		}
 		
 	}

@@ -59,7 +59,6 @@
      <Compile Include="Assets\Scripts\dungeon_scripts\EnemyProjectile.cs" />
      <Compile Include="Assets\Scripts\dungeon_scripts\createEnemy.cs" />
      <Compile Include="Assets\Scripts\dungeon_scripts\dropScr.cs" />
-     <Compile Include="Assets\Scripts\dungeon_scripts\dungeonCameraScr.cs" />
      <Compile Include="Assets\Scripts\dungeon_scripts\dungeonPlayerScr.cs" />
      <Compile Include="Assets\Scripts\dungeon_scripts\enemyController.cs" />
      <Compile Include="Assets\Scripts\dungeon_scripts\fireZombie.cs" />
