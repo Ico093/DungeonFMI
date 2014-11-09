@@ -28,7 +28,22 @@ public class padMove : MonoBehaviour {
 		return _score;
 	}
 
-
+	void OnGUI() {
+		GUIStyle boxStyle=GUI.skin.GetStyle("box");
+		boxStyle.fontSize = 30;
+		boxStyle.alignment = TextAnchor.MiddleCenter;
+		
+		int maxGroupWidth = Screen.width;
+		int maxGroupHeight = Screen.height / 8;
+		GUI.BeginGroup (new Rect (0, maxGroupHeight * 7, maxGroupWidth, maxGroupHeight));
+		
+		int singleWidth = maxGroupWidth / 3;
+	
+		GUI.Box(new Rect(0,Screen.height - maxGroupHeight,singleWidth,maxGroupHeight),"Score: " + GetScore().ToString(),boxStyle);
+		
+		
+		GUI.EndGroup ();
+	}
 	// Use this for initialization
 	void Start () {
 	
