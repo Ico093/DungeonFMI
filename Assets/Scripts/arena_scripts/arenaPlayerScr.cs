@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class dungeonPlayerScr : MonoBehaviour {
+public class arenaPlayerScr : MonoBehaviour {
 	
 
 	public static int routerNumber=0;
@@ -106,7 +106,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 		routerNumber = 0;
 		hp = maxHP;
 		projectileTimer = projectileTimerMAX;
-		SetDamage (10+GlobalPlayer._value[4]);
+		SetDamage (5);
 		sr = GetComponent<SpriteRenderer>();
 		states = Resources.LoadAll<Sprite>("brain");
 		score = 0;
