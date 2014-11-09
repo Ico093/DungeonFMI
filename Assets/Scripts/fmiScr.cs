@@ -7,7 +7,7 @@ public class fmiScr : MonoBehaviour {
 	void Start()
 	{
 		SpriteRenderer sr = GetComponent<SpriteRenderer>();
-		sr.sortingOrder = (int)(-transform.position.y * 1000);
+		//sr.sortingOrder = (int)(-transform.position.y * 1000);
 	}
 	
 	// Update is called once per frame
