@@ -70,6 +70,9 @@ public class projectileControllerScr : MonoBehaviour {
 			var another = other.GetComponent<fireZombie>();
 			another.TakeHit(this.GetDamage());
 		}
+
+
 		
 	}
+	
 }

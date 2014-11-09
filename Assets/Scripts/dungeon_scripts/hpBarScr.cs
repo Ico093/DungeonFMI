@@ -4,7 +4,7 @@ using System.Collections;
 public class hpBarScr : MonoBehaviour {
 
 	public Transform playerTransform;
-	public dungeonPlayerScr player;
+	public arenaPlayerScr player;
 	public SpriteRenderer player_render;
 
 	float spriteWidth;

@@ -27,21 +27,11 @@ public class arenaPlayerScr : MonoBehaviour {
 	public Sprite[] states;
 	public Sprite dead_sprite;
 
-	public Transform theCamera;
-	public float shiftBy;
-	public Transform endScreen;
-	public Transform cameraLoop;
-	float lowerBoundary = -15;
-
-	bool cameraLerping = false;
-	public float cameraMoveTime;
-	float cameraStartTime;
-	Vector3 cameraStartPos;
-	Vector3 cameraMoveTo;
-
 	//Styles
 	public Texture2D boxBackground;
-	public Texture2D router;
+	//public Texture2D router;
+
+	public bossScr boss;
 
 	void OnGUI() {
 		GUIStyle boxStyle=GUI.skin.GetStyle("box");
@@ -58,7 +48,7 @@ public class arenaPlayerScr : MonoBehaviour {
 		GUI.Box(new Rect(0,0,singleWidth,maxGroupHeight),"Health: " + GetHp ().ToString(),boxStyle);
 
 
-		GUI.Box(new Rect(singleWidth,0,singleWidth,maxGroupHeight),new GUIContent(""+routerNumber,router),boxStyle);
+		GUI.Box(new Rect(singleWidth,0,singleWidth,maxGroupHeight),"Boss HP: " + bossScr.hp, boxStyle);
 		GUI.Box(new Rect(singleWidth*2,0,singleWidth,maxGroupHeight),"Score: " + getScore().ToString(),boxStyle);
 
 
@@ -112,18 +102,10 @@ public class arenaPlayerScr : MonoBehaviour {
 		score = 0;
 	}
 
-	void CameraLerp()
-	{
-		theCamera.position = Vector3.Lerp(cameraStartPos, cameraMoveTo, (Time.time - cameraStartTime)/cameraMoveTime);
-	}
-	
 	void FixedUpdate () 
 	{
 						PlayerMovement ();
 						ShootLogic ();
-						if (cameraLerping) {
-						CameraLerp ();
-				}
 	}
 	
 	void PlayerMovement()
@@ -305,38 +287,12 @@ public class arenaPlayerScr : MonoBehaviour {
 			
 			
 		}
-		else if(other.tag == "cameraLoop")
-		{
-			cameraStartPos = theCamera.position;
-
-			Vector3 tempPos;
-			tempPos = theCamera.position;
-			tempPos.y += shiftBy;
-			cameraMoveTo = tempPos;
-			
-			tempPos = endScreen.position;
-			tempPos.y += shiftBy;
-			endScreen.position = tempPos;
-			
-			tempPos = cameraLoop.position;
-			tempPos.y += shiftBy;
-			cameraLoop.position = tempPos;
-			
-			lowerBoundary += shiftBy;
-			cameraLerping = true;
-			cameraStartTime = Time.time;
-		}
-		
 	}
 	void OnCollisionEnter2D(Collision2D other)
 	{
 				if (other.gameObject.tag == "hole") {
 					sr.sprite = dead_sprite;
 					Application.LoadLevel ("EndGame");
-				
-						
-
-		
 				}
 		}
 }
