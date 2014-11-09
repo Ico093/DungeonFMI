@@ -36,7 +36,6 @@ public class padMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-
 	
 
 		Vector3 new_position = new Vector3 (transform.position.x+Input.GetAxis ("Horizontal") * speed * Time.deltaTime, transform.position.y,0);

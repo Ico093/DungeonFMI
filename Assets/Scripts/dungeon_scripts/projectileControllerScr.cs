@@ -15,6 +15,8 @@ public class projectileControllerScr : MonoBehaviour {
 	void Start ()
 	{
 		projectileStartPosition = transform.position;
+		float xtraScale = GlobalPlayer._value [4];
+		transform.localScale += new Vector3 (xtraScale, xtraScale, xtraScale);
 	}
 	
 	// Update is called once per frame
