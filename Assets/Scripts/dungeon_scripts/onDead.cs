@@ -16,6 +16,7 @@ public class onDead : MonoBehaviour {
 			var tempCoin = Instantiate(coin, this.transform.position, Quaternion.identity) as GameObject;
 			var tempCoinHelper = tempCoin.GetComponent<dropScr>();
 			int rand=Random.Range(1,4);
+			rand=1;
 			if(rand==1) {
 				tempCoinHelper.SetType("health");
 				tempCoinHelper.SetValue(20);
