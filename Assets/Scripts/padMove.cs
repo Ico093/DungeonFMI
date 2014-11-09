@@ -27,8 +27,7 @@ public class padMove : MonoBehaviour {
 	public int GetScore() {
 		return _score;
 	}
-
-
+	
 	// Use this for initialization
 	void Start () {
 	
