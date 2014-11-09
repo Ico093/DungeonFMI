@@ -40,19 +40,21 @@ public class createLabyrinth : MonoBehaviour
 				maze[i,j] = 1;
 		// r for row、c for column
 		// Generate random r
-		int r = Random.Range(1,height);
+		int r = Random.Range(0,height);
 		while (r % 2 == 0) {
-			r = Random.Range(1,height);
+			r = Random.Range(0,height);
 		}
 		// Generate random c
-		int c = Random.Range(1,width);
+		int c = Random.Range(0,width);
 		while (c % 2 == 0) {
-			c = Random.Range(1,width);
+			c = Random.Range(0,width);
 		}
 
 		// Starting cell
 		var functions = player.GetComponent<LabyrinthMove> ();
 		functions.setTransform (r, c);
+		Debug.Log (r);
+		Debug.Log (c);
 		maze[r,c] = 0;
 
 		
