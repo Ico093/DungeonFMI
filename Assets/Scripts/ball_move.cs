@@ -35,6 +35,9 @@ public class ball_move : MonoBehaviour {
 	{
 		if (other.tag == "bottom_line") {
 			Debug.Log("umre");
+			GlobalPlayer._value = padMove._value;
+			GlobalPlayer._score += padMove._score;
+
 				}
 
 		}
