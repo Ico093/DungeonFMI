@@ -3,10 +3,9 @@ using System.Collections;
 
 public class dungeonPlayerScr : MonoBehaviour {
 	
-
-	public static int routerNumber=0;
 	float movementSpeed = 8 + GlobalPlayer._value [1];
 	public GameObject projectile;
+	public static int routerNumber=0;
 	//public GameObject endScreen;
 
 	float projectileTimerMAX = 0.5f - GlobalPlayer._value[2] / 10;
@@ -103,9 +102,12 @@ public class dungeonPlayerScr : MonoBehaviour {
 
 	void Start () 
 	{
-		routerNumber = 0;
+<<<<<<< HEAD
 		hp = maxHP;
 		projectileTimer = projectileTimerMAX;
+=======
+		routerNumber = 0;
+>>>>>>> 803effbeeeedc613b6cbec0ab0afb34b7fcf7c0e
 		SetDamage (5);
 		sr = GetComponent<SpriteRenderer>();
 		states = Resources.LoadAll<Sprite>("brain");
