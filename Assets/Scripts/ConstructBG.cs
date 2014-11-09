@@ -16,6 +16,7 @@ public class ConstructBG : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		bricks [0] = brick1;
 		bricks [1] = brick2;
 		bricks [2] = brick3;
 		bricks [3] = brick4;

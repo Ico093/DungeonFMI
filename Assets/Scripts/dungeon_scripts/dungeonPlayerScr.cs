@@ -104,7 +104,7 @@ public class dungeonPlayerScr : MonoBehaviour {
 
 	void Start () 
 	{
-		stageEnd = 1;
+		stageEnd = 10;
 		killedScore = 0;
 		routerNumber = 0;
 		hp = maxHP;
